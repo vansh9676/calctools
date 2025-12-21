@@ -72,7 +72,10 @@
                         <h2>Send Us a Message</h2>
                         <p>Fill out the form below and we'll get back to you as soon as possible.</p>
                         
-                        <form class="contact-form" id="contactForm">
+                       <form class="contact-form" id="contactForm" action="https://formspree.io/f/maqwjbbr" method="POST">
+                                <input type="hidden" name="_subject" value="New message from CalcTools">
+                                <input type="hidden" name="_redirect" value="thank-you.html">
+
                             <div class="form-group">
                                 <label for="name">Your Name *</label>
                                 <input type="text" id="name" name="name" required placeholder="Enter your name">
