@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert between different currencies using live exchange rates. Free currency converter with real-time data.">
+    <title>Currency Converter | Live Exchange Rates</title>
+    <link rel="stylesheet" href="../css/currency.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <h1>CalcTools</h1>
+                    <p>Currency Converter</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Converter -->
+    <main class="converter-main">
+        <div class="container">
+            <div class="converter-container">
+                <h1 class="converter-title">Currency Converter</h1>
+                <p class="converter-description">Convert between different currencies using live exchange rates. Rates are updated regularly from reliable sources.</p>
+                
+                <div class="disclaimer">
+                    <p><strong>Note:</strong> Exchange rates may vary and are for informational purposes only. Rates shown are estimates and may differ from actual bank rates.</p>
+                </div>
+                
+                <div class="converter-wrapper">
+                    <!-- Converter Form -->
+                    <div class="converter-form">
+                        <div class="currency-row">
+                            <div class="currency-group">
+                                <label for="amount">Amount</label>
+                                <div class="amount-input">
+                                    <span class="currency-symbol" id="fromSymbol">$</span>
+                                    <input type="number" id="amount" value="100" min="0" step="0.01" class="number-input">
+                                </div>
+                            </div>
+                            
+                            <div class="currency-group">
+                                <label for="fromCurrency">From</label>
+                                <select id="fromCurrency" class="currency-select">
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="BRL">BRL - Brazilian Real</option>
+                                </select>
+                            </div>
+                            
+                            <div class="swap-button">
+                                <button id="swapCurrencies" class="btn-swap" aria-label="Swap currencies">⇄</button>
+                            </div>
+                            
+                            <div class="currency-group">
+                                <label for="toCurrency">To</label>
+                                <select id="toCurrency" class="currency-select">
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="BRL">BRL - Brazilian Real</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button id="convert" class="btn-primary">Convert Currency</button>
+                            <button id="reverse" class="btn-secondary">Reverse Currencies</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Conversion Results -->
+                    <div class="conversion-results">
+                        <div class="result-display">
+                            <div class="result-amount" id="convertedAmount">92.50</div>
+                            <div class="result-currency" id="toCurrencyName">EUR - Euro</div>
+                        </div>
+                        
+                        <div class="rate-info">
+                            <div class="rate-item">
+                                <span>Exchange Rate</span>
+                                <span id="exchangeRate">1 USD = 0.9250 EUR</span>
+                            </div>
+                            <div class="rate-item">
+                                <span>Last Updated</span>
+                                <span id="lastUpdated">Today</span>
+                            </div>
+                        </div>
+                        
+                        <div class="conversion-details">
+                            <div class="detail-row">
+                                <span id="fromAmount">100 USD</span>
+                                <span>=</span>
+                                <span id="toAmount">92.50 EUR</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>1 USD</span>
+                                <span>=</span>
+                                <span id="unitRate">0.9250 EUR</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>1 EUR</span>
+                                <span>=</span>
+                                <span id="reverseRate">1.0811 USD</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Popular Conversions -->
+                    <div class="popular-conversions">
+                        <h3>Popular Conversions</h3>
+                        <div class="conversion-grid">
+                            <button class="conversion-btn" data-from="USD" data-to="EUR">
+                                <span>USD → EUR</span>
+                                <span class="rate">1 USD = 0.9250 EUR</span>
+                            </button>
+                            <button class="conversion-btn" data-from="EUR" data-to="USD">
+                                <span>EUR → USD</span>
+                                <span class="rate">1 EUR = 1.0811 USD</span>
+                            </button>
+                            <button class="conversion-btn" data-from="USD" data-to="GBP">
+                                <span>USD → GBP</span>
+                                <span class="rate">1 USD = 0.7900 GBP</span>
+                            </button>
+                            <button class="conversion-btn" data-from="GBP" data-to="USD">
+                                <span>GBP → USD</span>
+                                <span class="rate">1 GBP = 1.2658 USD</span>
+                            </button>
+                            <button class="conversion-btn" data-from="USD" data-to="JPY">
+                                <span>USD → JPY</span>
+                                <span class="rate">1 USD = 150.00 JPY</span>
+                            </button>
+                            <button class="conversion-btn" data-from="EUR" data-to="GBP">
+                                <span>EUR → GBP</span>
+                                <span class="rate">1 EUR = 0.8541 GBP</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Currency Table -->
+                    <div class="currency-table">
+                        <h3>Major Currency Rates</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Currency</th>
+                                        <th>Code</th>
+                                        <th>Rate vs USD</th>
+                                        <th>Rate vs EUR</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="currencyRates">
+                                    <!-- Filled by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Info Section -->
+                    <div class="info-section">
+                        <h3>About Currency Conversion</h3>
+                        <p>Currency exchange rates fluctuate constantly due to market forces. The rates shown here are indicative mid-market rates, which are the midpoint between buy and sell prices of global currency markets.</p>
+                        <p>For actual transaction rates, please check with your bank or currency exchange service. Rates may include fees and commissions that affect the final amount.</p>
+                        <div class="update-info">
+                            <p><strong>Data Source:</strong> Rates are updated daily from reliable financial data providers. This tool uses a combination of real-time and cached data for optimal performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcTools</h3>
+                    <p>Free online calculators and converters for everyday use.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>More Converters</h3>
+                    <ul>
+                        <li><a href="length-converter.html">Length Converter</a></li>
+                        <li><a href="weight-converter.html">Weight Converter</a></li>
+                        <li><a href="temperature.html">Temperature Converter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcTools. All rights reserved. | Exchange rates are for informational purposes only and may vary.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/currency.js"></script>
+</body>
+</html>

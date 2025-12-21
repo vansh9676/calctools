@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Calculators & Converters | CalcTools</title>
+    <link rel="stylesheet" href="/css/index.css">
+ </head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>CalcTools</h1>
+                <p>Free Online Calculators & Converters</p>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Free Online Calculators & Converters</h2>
+            <p>Easy-to-use tools for everyday calculations and conversions. No registration required.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Calculators Section -->
+            <section class="tools-section">
+                <h2 class="section-title">Calculators</h2>
+                <div class="tools-grid">
+                    <!-- EMI Calculator Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">💰</div>
+                        <h3>EMI Calculator</h3>
+                        <p>Calculate your monthly loan payments with interest. Useful for home loans, car loans, and personal loans.</p>
+                        <a href="calculator/emi-calculator.html" class="btn">Use Calculator</a>
+                    </div>
+
+                    <!-- Age Calculator Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">🎂</div>
+                        <h3>Age Calculator</h3>
+                        <p>Find out your exact age in years, months, and days. Simple date-based calculation.</p>
+                        <a href="calculator/age-calculator.html" class="btn">Use Calculator</a>
+                    </div>
+
+                    <!-- BMI Calculator Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">⚖️</div>
+                        <h3>BMI Calculator</h3>
+                        <p>Calculate Body Mass Index to understand your weight category. Health assessment tool.</p>
+                        <a href="calculator/bmi-calculator.html" class="btn">Use Calculator</a>
+                    </div>
+
+                    <!-- Percentage Calculator Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">%</div>
+                        <h3>Percentage Calculator</h3>
+                        <p>Calculate percentages easily. Find percentage of a number or percentage change.</p>
+                        <a href="calculator/percentage.html" class="btn">Use Calculator</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Converters Section -->
+            <section class="tools-section">
+                <h2 class="section-title">Converters</h2>
+                <div class="tools-grid">
+                    <!-- Currency Converter Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">💱</div>
+                        <h3>Currency Converter</h3>
+                        <p>Convert between different currencies using live exchange rates. Updated regularly.</p>
+                        <a href="converter/currency-calculator.html" class="btn">Use Converter</a>
+                    </div>
+
+                    <!-- Length Converter Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">📏</div>
+                        <h3>Length Converter</h3>
+                        <p>Convert between centimeters, meters, kilometers, and more. Metric and imperial units.</p>
+                        <a href="converter/length-calculator.html" class="btn">Use Converter</a>
+                    </div>
+
+                    <!-- Weight Converter Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">⚖️</div>
+                        <h3>Weight Converter</h3>
+                        <p>Convert between grams, kilograms, pounds, and ounces. Easy weight conversions.</p>
+                        <a href="converter/weight-converter.html" class="btn">Use Converter</a>
+                    </div>
+
+                    <!-- Temperature Converter Card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">🌡️</div>
+                        <h3>Temperature Converter</h3>
+                        <p>Convert between Celsius, Fahrenheit, and Kelvin. Accurate temperature conversion.</p>
+                        <a href="converter/temp.html" class="btn">Use Converter</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcTools</h3>
+                    <p>Free online calculators and converters for everyday use. Simple, accurate, and ad-free experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="calculator/emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="calculator/age-calculator.html">Age Calculator</a></li>
+                        <li><a href="calculator/bmi-calculator.html">BMI Calculator</a></li>
+                        <li><a href="calculator/percentage.html">Percentage Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcTools. All rights reserved. | This site uses cookies for ads and analytics.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navList = document.querySelector('.nav-list');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu-btn')) {
+                    navList.style.display = 'none';
+                }
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navList.style.display = 'flex';
+            } else {
+                navList.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

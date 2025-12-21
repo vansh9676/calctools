@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert between different length units: centimeters, meters, kilometers, inches, feet, yards, and miles. Easy length conversion tool.">
+    <title>Length Converter | Unit Conversion Tool</title>
+    <link rel="stylesheet" href="../css/lenghth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <h1>CalcTools</h1>
+                    <p>Length Converter</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Converter -->
+    <main class="converter-main">
+        <div class="container">
+            <div class="converter-container">
+                <h1 class="converter-title">Length Converter</h1>
+                <p class="converter-description">Convert between different length units including metric (centimeters, meters, kilometers) and imperial (inches, feet, yards, miles) systems.</p>
+                
+                <div class="converter-wrapper">
+                    <!-- Converter Form -->
+                    <div class="converter-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="inputValue">Enter Length</label>
+                                <input type="number" id="inputValue" value="100" min="0" step="0.01" class="number-input">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="fromUnit">From Unit</label>
+                                <select id="fromUnit" class="unit-select">
+                                    <option value="mm">Millimeters (mm)</option>
+                                    <option value="cm" selected>Centimeters (cm)</option>
+                                    <option value="m">Meters (m)</option>
+                                    <option value="km">Kilometers (km)</option>
+                                    <option value="in">Inches (in)</option>
+                                    <option value="ft">Feet (ft)</option>
+                                    <option value="yd">Yards (yd)</option>
+                                    <option value="mi">Miles (mi)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="swap-button">
+                                <button id="swapUnits" class="btn-swap" aria-label="Swap units">⇄</button>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="toUnit">To Unit</label>
+                                <select id="toUnit" class="unit-select">
+                                    <option value="mm">Millimeters (mm)</option>
+                                    <option value="cm">Centimeters (cm)</option>
+                                    <option value="m" selected>Meters (m)</option>
+                                    <option value="km">Kilometers (km)</option>
+                                    <option value="in">Inches (in)</option>
+                                    <option value="ft">Feet (ft)</option>
+                                    <option value="yd">Yards (yd)</option>
+                                    <option value="mi">Miles (mi)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="action-button">
+                                <button id="convert" class="btn-primary">Convert</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conversion Results -->
+                    <div class="conversion-results">
+                        <div class="result-display">
+                            <div class="result-value" id="resultValue">1.00</div>
+                            <div class="result-unit" id="resultUnit">m</div>
+                        </div>
+                        <div class="result-equation">
+                            <span id="fromDisplay">100 cm</span>
+                            <span>=</span>
+                            <span id="toDisplay">1.00 m</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Conversions -->
+                    <div class="quick-conversions">
+                        <h3>Quick Conversions</h3>
+                        <div class="quick-grid">
+                            <button class="quick-btn" data-value="1" data-from="cm" data-to="in">
+                                <span>1 cm → inches</span>
+                                <span class="result">0.39 in</span>
+                            </button>
+                            <button class="quick-btn" data-value="1" data-from="m" data-to="ft">
+                                <span>1 m → feet</span>
+                                <span class="result">3.28 ft</span>
+                            </button>
+                            <button class="quick-btn" data-value="1" data-from="km" data-to="mi">
+                                <span>1 km → miles</span>
+                                <span class="result">0.62 mi</span>
+                            </button>
+                            <button class="quick-btn" data-value="1" data-from="in" data-to="cm">
+                                <span>1 in → cm</span>
+                                <span class="result">2.54 cm</span>
+                            </button>
+                            <button class="quick-btn" data-value="1" data-from="ft" data-to="m">
+                                <span>1 ft → meters</span>
+                                <span class="result">0.30 m</span>
+                            </button>
+                            <button class="quick-btn" data-value="1" data-from="mi" data-to="km">
+                                <span>1 mi → kilometers</span>
+                                <span class="result">1.61 km</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Conversion Table -->
+                    <div class="conversion-table">
+                        <h3>Common Length Conversions</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Unit</th>
+                                        <th>Millimeters</th>
+                                        <th>Centimeters</th>
+                                        <th>Meters</th>
+                                        <th>Kilometers</th>
+                                        <th>Inches</th>
+                                        <th>Feet</th>
+                                        <th>Yards</th>
+                                        <th>Miles</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="conversionTable">
+                                    <!-- Filled by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Info Section -->
+                    <div class="info-section">
+                        <h3>Length Conversion Reference</h3>
+                        
+                        <div class="unit-info-grid">
+                            <div class="unit-card">
+                                <h4>Metric System</h4>
+                                <ul>
+                                    <li><strong>Millimeter (mm):</strong> 1/1000 of a meter</li>
+                                    <li><strong>Centimeter (cm):</strong> 1/100 of a meter</li>
+                                    <li><strong>Meter (m):</strong> Base unit of length in SI</li>
+                                    <li><strong>Kilometer (km):</strong> 1000 meters</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="unit-card">
+                                <h4>Imperial System</h4>
+                                <ul>
+                                    <li><strong>Inch (in):</strong> 1/12 of a foot</li>
+                                    <li><strong>Foot (ft):</strong> 12 inches</li>
+                                    <li><strong>Yard (yd):</strong> 3 feet</li>
+                                    <li><strong>Mile (mi):</strong> 1760 yards</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="conversion-reference">
+                            <h4>Conversion Formulas</h4>
+                            <div class="formula-grid">
+                                <div class="formula-item">
+                                    <span class="formula">1 cm = 10 mm</span>
+                                    <span class="desc">Centimeters to millimeters</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="formula">1 m = 100 cm</span>
+                                    <span class="desc">Meters to centimeters</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="formula">1 km = 1000 m</span>
+                                    <span class="desc">Kilometers to meters</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="formula">1 in = 2.54 cm</span>
+                                    <span class="desc">Inches to centimeters</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="formula">1 ft = 30.48 cm</span>
+                                    <span class="desc">Feet to centimeters</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="formula">1 mi = 1.609 km</span>
+                                    <span class="desc">Miles to kilometers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcTools</h3>
+                    <p>Free online calculators and converters for everyday use.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>More Converters</h3>
+                    <ul>
+                        <li><a href="currency-converter.html">Currency Converter</a></li>
+                        <li><a href="weight-converter.html">Weight Converter</a></li>
+                        <li><a href="temperature.html">Temperature Converter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcTools. All rights reserved. | Accurate conversion tool for educational and practical use.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/length.js"></script>
+</body>
+</html>
