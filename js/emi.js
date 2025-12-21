@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const detailDuration = document.getElementById('detailDuration');
     const annualInterest = document.getElementById('annualInterest');
     
-    // Format currency
+    // Format currency (Updated to Indian Locale 'en-IN')
     function formatCurrency(amount) {
-        return '₹' + amount.toLocaleString('en-US', {
+        return '₹' + amount.toLocaleString('en-IN', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
@@ -39,12 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const years = parseFloat(loanTenureSlider.value);
         
         // Calculate monthly values
-        const monthlyRate = annualRate / 12 / 100;
         const months = years * 12;
-        
-        // EMI Calculation formula
-        const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / 
-                   (Math.pow(1 + monthlyRate, months) - 1);
+        let emi = 0;
+
+        // LOGIC FIX: Handle 0% interest to avoid division by zero errors
+        if (annualRate === 0) {
+            emi = principal / months;
+        } else {
+            const monthlyRate = annualRate / 12 / 100;
+            // Standard EMI Formula
+            emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / 
+                       (Math.pow(1 + monthlyRate, months) - 1);
+        }
         
         // Calculate totals
         const totalPaymentAmount = emi * months;
@@ -104,26 +110,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     loanTypeSelect.addEventListener('change', function() {
         // Set default values based on loan type
+        // NOTE: Ensure your HTML slider 'max' attributes support these values
         const type = this.value;
         switch(type) {
             case 'home':
-                loanAmountSlider.value = 300000;
-                interestRateSlider.value = 7.5;
+                loanAmountSlider.value = 3000000; // 30 Lakh
+                interestRateSlider.value = 8.5;
                 loanTenureSlider.value = 20;
                 break;
             case 'car':
-                loanAmountSlider.value = 25000;
-                interestRateSlider.value = 5.5;
+                loanAmountSlider.value = 500000; // 5 Lakh
+                interestRateSlider.value = 9.5;
                 loanTenureSlider.value = 5;
                 break;
             case 'personal':
-                loanAmountSlider.value = 15000;
+                loanAmountSlider.value = 200000; // 2 Lakh
                 interestRateSlider.value = 12.5;
                 loanTenureSlider.value = 3;
                 break;
             case 'education':
-                loanAmountSlider.value = 50000;
-                interestRateSlider.value = 6.5;
+                loanAmountSlider.value = 1000000; // 10 Lakh
+                interestRateSlider.value = 10.5;
                 loanTenureSlider.value = 10;
                 break;
         }
