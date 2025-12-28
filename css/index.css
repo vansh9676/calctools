@@ -328,3 +328,15 @@ body {
     line-height: 1.6;
     color: #444;
 }
+@media (max-width: 600px) {
+  .homepage-info {
+    padding: 10px 20px;
+  }
+  .homepage-info h2 {
+    font-size: 22px;
+  }
+  .homepage-info p {
+    font-size: 14px;
+  }
+}
+
