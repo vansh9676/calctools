@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free EMI Calculator for home loan, car loan, and personal loan. Calculate monthly EMI, total interest payable, and loan repayment schedule with accurate results.">
-    <title>EMI Calculator | Loan Payment Calculator</title>
+    <meta name="description" content="Use our EMI Calculator to calculate Home Loan, Car Loan and Personal Loan EMIs instantly. Check monthly EMI, total interest, and loan repayment schedule with a detailed amortization chart.">
+    <meta name="keywords" content="EMI Calculator, Home Loan EMI Calculator, Car Loan EMI Calculator, Personal Loan EMI, Loan Interest Calculator, Loan EMI Calculator India, Monthly EMI calculation">
+    <title>EMI Calculator – Home, Car & Personal Loan EMI with Interest Chart</title>
     <link rel="stylesheet" href="../css/emi-calculator.css">
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW819E0MN1"></script>
@@ -15,7 +16,24 @@
 
   gtag('config', 'G-FW819E0MN1');
 </script>
-   
+   <script type="application/ld+json">
+                                        {
+                                          "@context": "https://schema.org",
+                                          "@type": "WebApplication",
+                                          "name": "EMI Calculator",
+                                          "url": "https://calctools.co.in/calculator/emi-calculator.html",
+                                          "description": "EMI calculator for Home Loan, Car Loan and Personal Loan EMI with interest chart in India.",
+                                          "applicationCategory": "Finance",
+                                          "operatingSystem": "All",
+                                          "inLanguage": "en-IN",
+                                          "publisher": {
+                                                            "@type": "Organization",
+                                                            "name": "CalcTools",
+                                                            "url": "https://calctools.co.in"
+                                                      }
+                                        }
+    </script>
+
 </head>
 <body>
     <!-- Header -->
@@ -158,6 +176,43 @@
             </div>
         </div>
     </main>
+            <section class="seo-content">
+                            <h2>What is EMI?</h2>
+                                <p>EMI stands for Equated Monthly Instalment. It is the fixed monthly amount you repay to the bank or lender for a home loan, car loan, or personal loan. EMI includes both loan principal and interest cost.</p>
+
+                                    <h3>How is EMI Calculated?</h3>
+                                    <p>Banks use the reducing balance method to calculate EMI. The standard EMI formula is:</p>
+                                    <pre><strong>EMI = [P × R × (1+R)<sup>N</sup>] / [(1+R)<sup>N</sup> − 1]</strong></pre>
+                            <ul>
+                                    <li><strong>P</strong> = Loan Amount</li>
+                                    <li><strong>R</strong> = Monthly Interest Rate (Annual Rate/12)</li>
+                                    <li><strong>N</strong> = Loan Tenure in Months</li>
+                            </ul>
+
+                                    <h3>Example EMI Calculation</h3>
+                                    <p>If you take a ₹10,00,000 loan for 5 years @ 10% interest rate:</p>
+                                    <p><strong>EMI ≈ ₹21,247 / month</strong></p>
+
+                                    <h2>Benefits of Using EMI Calculator</h2>
+                            <ul>
+                                    <li>Plan monthly EMI within your budget</li>
+                                    <li>Compare Home, Car & Personal loan options</li>
+                                    <li>Understand total interest cost before taking loan</li>
+                                    <li>Avoid financial stress with proper loan planning</li>
+                            </ul>
+
+                                    <h2>Frequently Asked Questions</h2>
+                            <div class="faq">
+                                    <h3>1. Does EMI increase or decrease over time?</h3>
+                                    <p>No. EMI remains fixed throughout tenure unless you restructure loan.</p>
+
+                                     <h3>2. Can I reduce my EMI?</h3>
+                                        <p>Yes. By increasing tenure or making part-payment.</p>
+
+                                        <h3>3. Is GST applied on loan EMI?</h3>
+                                        <p>No GST on loan principal or interest for personal borrowers.</p>
+                                </div>
+            </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -189,6 +244,19 @@
             </div>
         </div>
     </footer>
+    <script>
+            document.querySelectorAll('.faq h3').forEach(function(question) {
+                                            question.addEventListener('click', function() {
+                                                                                            this.classList.toggle('active');
+                                                                                            let answer = this.nextElementSibling;
+                                                                                            if(answer.style.display === "block") {
+                                                                                                                                    answer.style.display = "none";
+                                                                                                                                 } else {
+                                                                                                                                          answer.style.display = "block";
+                                                                                                                                        }
+                                                                       });
+                                                                    });
+        </script>
 
     <!-- JavaScript -->
     <script src="../js/emi.js"></script>
