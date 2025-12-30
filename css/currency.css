@@ -626,3 +626,22 @@ tr:hover {
 .faq p {
     display: none;
 }
+.seo-content {
+    max-width: 900px;
+    margin: 40px auto;   /* Centers everything horizontally */
+    text-align: center;  /* Centers headings + text */
+}
+
+.seo-content p,
+.seo-content ul,
+.seo-content li {
+    text-align: left; /* Keep paragraphs readable */
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.seo-content h2, 
+.seo-content h3 {
+    text-align: center;
+}
+
