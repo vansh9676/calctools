@@ -979,25 +979,38 @@ tr:hover {
     line-height: 1.5;
 }
 
-.related-tools a {
-    display: inline-block;
-    background: #3b59f0; /* Button background */
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: 0.25s ease;
-    margin: 5px 0;
+.related-tools {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
 }
 
-.related-tools a:hover {
-    background: #1f3fcc; /* Darker hover */
-    transform: translateY(-2px); /* Smooth hover lift */
+.related-tools ul {
+    padding: 0;
+    margin: 0;
 }
 
 .related-tools li {
-    list-style: none; /* Remove bullet points */
-    margin: 10px 0;
+    list-style: none;
+    margin: 12px 0;
 }
+
+.related-tools a {
+    display: inline-block;
+    background: #3b59f0;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.25s ease;
+    width: 240px; /* Fixed button width for equal shape */
+}
+
+.related-tools a:hover {
+    background: #1f3fcc;
+    transform: translateY(-2px);
+}
+
 
