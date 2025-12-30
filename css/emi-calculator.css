@@ -428,3 +428,61 @@ body {
     .page-intro h1 { font-size: 22px; }
     .page-intro p { font-size: 14px; }
 }
+/* --- SEO Content Styling --- */
+.seo-content {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    color: #333;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.seo-content h2, 
+.seo-content h3 {
+    margin-top: 28px;
+    color: #1a2b4c;
+    font-weight: 600;
+}
+
+.seo-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.seo-content ul li {
+    margin-bottom: 8px;
+}
+
+/* --- FAQ Section Styling --- */
+.faq {
+    background: #f7f9fc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+    border-left: 4px solid #4c65ff;
+}
+
+.faq h3 {
+    cursor: pointer;
+    padding: 8px 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.faq p {
+    display: none;
+    padding: 6px 0 14px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq h3.active + p {
+    display: block;
+}
+
+/* Hover Interaction */
+.faq h3:hover {
+    color: #4c65ff;
+}
+
