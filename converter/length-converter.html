@@ -300,7 +300,16 @@
             </div>
         </div>
     </footer>
+            <script>
+                document.querySelectorAll('.faq h3').forEach(question => {
+    question.addEventListener('click', () => {
+        question.classList.toggle('active');
+        let answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+    });
+});
 
+            </script>
     <!-- JavaScript -->
     <script src="../js/length.js"></script>
 </body>
