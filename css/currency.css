@@ -604,3 +604,25 @@ tr:hover {
         grid-template-columns: 1fr;
     }
 }
+.related-tools {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+.related-tools a {
+    display: inline-block;
+    background: #3b59f0;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 6px 0;
+    width: 240px;
+}
+.related-tools a:hover {
+    background: #1f3fcc;
+    transform: translateY(-2px);
+}
+.faq p {
+    display: none;
+}
