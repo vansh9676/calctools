@@ -298,6 +298,15 @@ document.querySelectorAll('.faq h3').forEach(function(q) {
             </div>
         </div>
     </footer>
+        <script>
+                document.querySelectorAll('.faq h3').forEach(question => {
+                    question.addEventListener('click', () => {
+                        question.classList.toggle('active');
+                        let answer = question.nextElementSibling;
+                    answer.style.display = answer.style.display === "block" ? "none" : "block";
+                });
+            });
+</script>
 
     <!-- JavaScript -->
     <script src="../js/currency.js"></script>
