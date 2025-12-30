@@ -979,3 +979,23 @@ tr:hover {
     line-height: 1.5;
 }
 
+.related-tools {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f5f8ff;
+}
+
+.related-tools h3 {
+    color: #1a2b4c;
+    margin-bottom: 8px;
+}
+
+.related-tools ul {
+    margin-left: 18px;
+}
+
+.related-tools li {
+    margin: 6px 0;
+}
