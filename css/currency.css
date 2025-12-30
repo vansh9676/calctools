@@ -626,22 +626,51 @@ tr:hover {
 .faq p {
     display: none;
 }
+/* Center & beautify SEO section */
 .seo-content {
     max-width: 900px;
-    margin: 40px auto;   /* Centers everything horizontally */
-    text-align: center;  /* Centers headings + text */
+    margin: 40px auto;
+    padding: 10px 20px;
+    text-align: center;
 }
 
+/* Keep text readable inside */
 .seo-content p,
 .seo-content ul,
 .seo-content li {
-    text-align: left; /* Keep paragraphs readable */
-    margin: 0 auto;
-    max-width: 700px;
+    text-align: left;
+    max-width: 750px;
+    margin: 6px auto;
 }
 
-.seo-content h2, 
+.seo-content h2,
 .seo-content h3 {
+    font-weight: 600;
+    color: #1a2b4c;
     text-align: center;
+    margin-bottom: 10px;
 }
+
+/* FAQ clickable interaction */
+.faq h3 {
+    cursor: pointer;
+    background: #eef2ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 12px;
+    transition: 0.3s ease;
+}
+
+.faq h3:hover {
+    background: #d8e0ff;
+}
+
+.faq p {
+    display: none;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-left: 3px solid #3b59f0;
+    border-radius: 6px;
+}
+
 
