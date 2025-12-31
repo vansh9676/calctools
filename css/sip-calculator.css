@@ -1012,5 +1012,69 @@ tr:hover {
     background: #1f3fcc;
     transform: translateY(-2px);
 }
+/* SEO Content Block Styling */
+.sip-seo-content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #333;
+}
+
+.sip-seo-content h2,
+.sip-seo-content h3 {
+    font-weight: 600;
+    color: #1a3e72;
+    margin-bottom: 12px;
+    margin-top: 22px;
+}
+
+.sip-seo-content p {
+    margin-bottom: 12px;
+}
+
+.sip-seo-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.sip-seo-content ul li {
+    margin-bottom: 8px;
+}
+
+.sip-seo-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.sip-seo-content table th,
+.sip-seo-content table td {
+    padding: 10px 12px;
+    border: 1px solid #d4d4d4;
+}
+
+.sip-seo-content table th {
+    background-color: #f2f6ff;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .sip-seo-content {
+        padding: 20px 15px;
+        font-size: 15px;
+    }
+
+    .sip-seo-content table th,
+    .sip-seo-content table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
 
 
