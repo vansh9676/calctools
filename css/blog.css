@@ -128,3 +128,20 @@ body {
     color: #95a5a6;
     font-size: 0.9rem;
 }
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer-section {
+    min-width: 220px;
+}
+@media (max-width: 768px) {
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+}
+
