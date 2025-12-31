@@ -1,0 +1,93 @@
+body {
+  background: #f8f9fc;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Header Navigation */
+.nav-header {
+ background: linear-gradient(135deg, #2c3e50, #4a6491);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  background: #0e2c57;
+  border-radius: 6px;
+}
+
+/* Hero Section */
+.blog-hero {
+  text-align: center;
+  padding: 40px 20px;
+  color: #143a70;
+}
+
+/* Blog Cards */
+.blog-list {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
+}
+
+.blog-card {
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.blog-card h2 a {
+  color: #143a70;
+  text-decoration: none;
+}
+
+.blog-card p {
+  margin-top: 8px;
+  color: #333;
+}
+
+.read-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #143a70;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.read-btn:hover {
+  background: #0f2e56;
+}
+
+.coming-soon {
+  opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+ background: linear-gradient(135deg, #2c3e50, #4a6491);
+  text-align: center;
+  padding: 12px;
+  margin-top: 30px;
+   color: #95a5a6;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .blog-card {
+    padding: 18px;
+  }
+}
