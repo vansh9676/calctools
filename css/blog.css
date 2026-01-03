@@ -152,10 +152,11 @@ body {
     padding: 1rem;
     border-radius: 4px;
     margin-top: 2rem;
+   text-align: center;
 }
 
 .disclaimer p {
     color: #856404;
     margin-bottom: 0;
-    text-align:center;
+    text-align: center;
 }
