@@ -485,4 +485,19 @@ body {
 .faq h3:hover {
     color: #4c65ff;
 }
+/* Disclaimer */
+.disclaimer {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+   text-align: center;
+}
+
+.disclaimer p {
+    color: #856404;
+    margin-bottom: 0;
+    text-align: center;
+}
 
