@@ -4,6 +4,7 @@
     <!-- Home Page -->
     <url>
         <loc>https://calctools.co.in/</loc>
+         <lastmod>2026-01-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -82,16 +83,19 @@
     <!-- Blog Pages -->
     <url>
         <loc>https://calctools.co.in/blog/index.html</loc>
+         <lastmod>2026-01-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://calctools.co.in/blog/sip-vs-fd.html</loc>
+         <lastmod>2026-01-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://calctools.co.in/blog/best-sip-plans-2025.html</loc>
+         <lastmod>2026-01-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
