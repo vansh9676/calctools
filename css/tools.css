@@ -1,0 +1,284 @@
+/* ======================================================
+   TOOLS CSS (CALCULATORS + CONVERTERS ONLY)
+   ====================================================== */
+
+/* Tool container */
+.tool-container {
+  max-width: 760px;
+  margin: 40px auto;
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Tool heading */
+.tool-container h1 {
+  margin-bottom: 10px;
+}
+
+.tool-intro {
+  color: #9ca3af;
+  margin-bottom: 24px;
+}
+
+/* Input groups */
+.tool-group {
+  margin-bottom: 18px;
+}
+
+.tool-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.tool-group input,
+.tool-group select {
+  width: 100%;
+  padding: 10px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  color: #e5e7eb;
+}
+
+/* Buttons */
+.tool-btn {
+  margin-top: 14px;
+  padding: 10px 18px;
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tool-btn:hover {
+  opacity: 0.9;
+}
+
+/* Result box */
+.tool-result {
+  margin-top: 24px;
+  padding: 16px;
+  background: #020617;
+  border-left: 4px solid #38bdf8;
+  color: #e5e7eb;
+  display: none;
+}
+
+/* Explanation section */
+.tool-info {
+  margin-top: 40px;
+}
+
+.tool-info h2 {
+  margin-bottom: 10px;
+}
+
+.tool-info p,
+.tool-info li {
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+/* Disclaimer */
+.tool-disclaimer {
+  margin-top: 40px;
+  padding: 14px;
+  background: #020617;
+  border-left: 4px solid #a5b4fc;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tool-container {
+    padding: 18px;
+  }
+}
+/* ===============================
+   SIP HIGH VALUE PAGE STYLES
+   =============================== */
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.compare-card {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.compare-card h3 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.compare-card label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.compare-card input {
+  width: 100%;
+  padding: 10px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  color: #e5e7eb;
+}
+
+.compare-action {
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+/* Results */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.summary-card {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.summary-card .amount {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.summary-card.sip { border-left: 4px solid #38bdf8; }
+.summary-card.fd { border-left: 4px solid #a5b4fc; }
+.summary-card.lump { border-left: 4px solid #22c55e; }
+
+.winner-box {
+  margin: 20px 0;
+  padding: 16px;
+  background: #020617;
+  border-left: 4px solid #38bdf8;
+  text-align: center;
+}
+
+.chart-title {
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+/* Bars */
+.bar-visual {
+  max-width: 600px;
+  margin: auto;
+}
+
+.bar-wrap {
+  margin-bottom: 14px;
+}
+
+.bar-wrap span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.bar {
+  height: 30px;
+  border-radius: 6px;
+}
+
+.bar.sip { background: #38bdf8; }
+.bar.fd { background: #a5b4fc; }
+.bar.lump { background: #22c55e; }
+
+/* Content */
+.sip-content {
+  margin-top: 60px;
+}
+/* ===============================
+   STACKED INVESTED vs GAINS BARS
+   =============================== */
+
+.bar-stack {
+  width: 100%;
+  background: #020617;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar.invested {
+  opacity: 0.6;
+  height: 26px;
+}
+
+.bar.gain {
+  height: 26px;
+}
+
+.bar.invested::after,
+.bar.gain::after {
+  content: attr(data-label);
+  font-size: 0.75rem;
+  padding-left: 8px;
+  color: #020617;
+  line-height: 26px;
+}
+/* ===============================
+   EMI PAGE LINE GRAPH
+   =============================== */
+
+.line-chart {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.line-chart svg {
+  width: 100%;
+  height: 300px;
+}
+
+.emi-content {
+  margin-top: 60px;
+}
+/* ===============================
+   EMI TENURE COMPARISON GRAPH
+   =============================== */
+
+#lineOriginal {
+  stroke: #38bdf8;
+}
+
+#lineReduced {
+  stroke: #22c55e;
+}
+
+.graph-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.graph-legend span::before {
+  content: "— ";
+  font-weight: bold;
+}
+
