@@ -6,6 +6,12 @@
   <meta name="description" content="Contact CalcTools for feedback, suggestions, or questions related to our calculators and educational tools.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Ensure the contact form looks good on all devices */
+    .content-wrap { max-width: 600px; margin: 0 auto; }
+    .contact-alt { margin-top: 30px; border-top: 1px solid #1f2937; padding-top: 20px; font-size: 0.9rem; color: #9ca3af; }
+    .contact-alt strong { color: #e5e7eb; }
+  </style>
 </head>
 <body>
 
@@ -22,42 +28,41 @@
 </header>
 
 <main class="container page-content">
-   <div class="content-wrap">
-  <h1>Contact Us</h1>
+  <div class="content-wrap">
+    <h1>Contact Us</h1>
 
-  <p>
-    Have feedback, suggestions, or questions about CalcTools?
-    Use the form below to get in touch. We read every message.
-  </p>
+    <p>
+      Have feedback, suggestions, or questions about CalcTools?
+      Use the form below to get in touch. We read every message.
+    </p>
 
-  <p class="note">
-    Please note: We do not provide personal financial, medical,
-    or professional advice through this form.
-  </p>
+    <p class="note" style="color:#9ca3af; font-size:0.9rem; margin-bottom:20px;">
+      Please note: We do not provide personal financial, medical,
+      or professional advice through this form.
+    </p>
 
-  <!-- CONTACT FORM -->
-  <form class="contact-form" action="https://formspree.io/f/xnjjavyk" method="post">
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-    </div>
+    <form class="contact-form" action="https://formspree.io/f/xnjjavyk" method="post">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
 
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-    </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
 
-    <div class="form-group">
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-    </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
 
-    <button type="submit" class="btn-submit">Send Message</button>
-  </form>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
 
-  <p class="contact-alt">
-    Or email us directly at: <strong>	calctools.contact@gmail.com</strong>
-  </p>
+    <p class="contact-alt">
+      Or email us directly at: <strong>calctools.contact@gmail.com</strong>
+    </p>
   </div>
 </main>
 
@@ -74,7 +79,7 @@
     <a href="/learn.html">Learn</a> |
     <a href="/contact.html">Contact</a> |
     <a href="/privacy-policy.html">Privacy Policy</a> |
-    <a href="/terms.html">Terms & Conditions</a>
+    <a href="/terms-and-conditions.html">Terms & Conditions</a>
   </nav>
 
   <p class="footer-disclaimer">
@@ -86,7 +91,6 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 
 </body>
 </html>
