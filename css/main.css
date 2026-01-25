@@ -372,3 +372,48 @@ video {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+/* iphone-style-unlock animation */
+@keyframes iphoneUnlock {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(30px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Apply to major sections with staggered delays */
+.tool-container, .card, .blog-article {
+  opacity: 0; /* Initial state hidden */
+  animation: iphoneUnlock 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  will-change: transform, opacity; /* Hardware acceleration */
+}
+
+/* Staggering the delay for a fluid sequence */
+.tool-container:nth-child(1) { animation-delay: 0.1s; }
+.tool-container:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(odd) { animation-delay: 0.3s; }
+.card:nth-child(even) { animation-delay: 0.4s; }
+.logo, .hero h1 {
+  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s infinite linear;
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% { background-position: -150px; }
+  100% { background-position: 150px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
