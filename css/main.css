@@ -339,3 +339,36 @@ video {
   margin-top: 10px;
   background: #1f2937; /* subtle divider */
 }
+/* Smooth Fade-In for all sections */
+.tool-container, .card, .blog-article {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth hover for buttons */
+.tool-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+}
+
+/* Results box "Reveal" animation */
+.tool-result, .compare-result {
+  animation: expandIn 0.5s ease-out;
+}
+
+@keyframes expandIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
