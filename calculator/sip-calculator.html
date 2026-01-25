@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SIP Calculator – SIP vs FD vs Lumpsum Comparison</title>
+
+  <meta name="description" content="Use this SIP calculator to estimate returns and compare SIP vs FD vs lumpsum investments. Includes examples, visual comparison, and educational explanations for beginners.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/tools.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/calculators.html">Calculators</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/learn.html">Learn</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container content-wrap">
+
+  <section class="tool-container">
+    <h1>SIP Calculator – Compare SIP vs FD vs Lumpsum</h1>
+    <p class="tool-intro">
+      This SIP calculator helps you understand how Systematic Investment Plans (SIP)
+      compare with Fixed Deposits (FD) and Lumpsum investments using real examples,
+      visual graphs, and clear explanations.
+    </p>
+  </section>
+
+  <section class="compare-grid">
+
+    <div class="compare-card">
+      <h3>SIP</h3>
+      <label>Monthly Investment (₹)</label>
+      <input type="number" id="sipAmount" value="5000">
+
+      <label>Expected Return (%)</label>
+      <input type="number" id="sipRate" value="12">
+
+      <label>Investment Period (Years)</label>
+      <input type="number" id="sipYears" value="10">
+    </div>
+
+    <div class="compare-card">
+      <h3>Fixed Deposit (FD)</h3>
+      <label>Investment Amount (₹)</label>
+      <input type="number" id="fdAmount" value="600000">
+
+      <label>FD Interest Rate (%)</label>
+      <input type="number" id="fdRate" value="6.5">
+
+      <label>Investment Period (Years)</label>
+      <input type="number" id="fdYears" value="10">
+    </div>
+
+    <div class="compare-card">
+      <h3>Lumpsum</h3>
+      <label>Investment Amount (₹)</label>
+      <input type="number" id="lsAmount" value="600000">
+
+      <label>Expected Return (%)</label>
+      <input type="number" id="lsRate" value="12">
+
+      <label>Investment Period (Years)</label>
+      <input type="number" id="lsYears" value="10">
+    </div>
+
+  </section>
+
+  <div class="compare-action">
+    <button class="tool-btn" id="calculateBtn">Compare Investments</button>
+  </div>
+
+  <section id="resultSection" class="compare-result" style="display:none;">
+    <h2>Comparison Results</h2>
+
+    <div class="summary-grid">
+      <div class="summary-card sip">
+        <h3>SIP</h3>
+        <p>Invested: <strong id="sipInvested"></strong></p>
+        <p>Gains: <strong id="sipGains"></strong></p>
+        <p class="amount">Total: <span id="sipResult"></span></p>
+      </div>    
+      <div class="summary-card fd">
+        <h3>FD</h3>
+        <p>Invested: <strong id="fdInvested"></strong></p>
+        <p>Gains: <strong id="fdGains"></strong></p>
+        <p class="amount">Total: <span id="fdResult"></span></p>
+      </div>
+      <div class="summary-card lump">
+        <h3>Lumpsum</h3>
+        <p>Invested: <strong id="lsInvested"></strong></p>
+        <p>Gains: <strong id="lsGains"></strong></p>
+        <p class="amount">Total: <span id="lsResult"></span></p>
+      </div>  
+    </div>
+
+    <p id="winnerText" class="winner-box"></p>
+
+    <h3 class="chart-title">Visual Comparison of Returns</h3>
+
+    <div class="bar-visual">
+      <div class="bar-wrap">
+        <span>SIP</span>
+        <div class="bar-stack">
+          <div id="sipInvestBar" class="bar invested sip"></div>
+          <div id="sipGainBar" class="bar gain sip"></div>
+        </div>
+      </div>
+
+      <div class="bar-wrap">
+        <span>FD</span>
+        <div class="bar-stack">
+          <div id="fdInvestBar" class="bar invested fd"></div>
+          <div id="fdGainBar" class="bar gain fd"></div>
+        </div>
+      </div>
+
+      <div class="bar-wrap">
+        <span>Lumpsum</span>
+        <div class="bar-stack">
+          <div id="lsInvestBar" class="bar invested lump"></div>
+          <div id="lsGainBar" class="bar gain lump"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-info sip-content">
+    <h2>What is a SIP?</h2>
+    <p>
+      A Systematic Investment Plan (SIP) is a method of investing a fixed amount
+      regularly in mutual funds. Instead of investing a large sum at once, SIP
+      allows investors to invest smaller amounts monthly, making it easier to
+      build wealth over time.
+    </p>
+
+    <p>
+      SIPs work on the principle of disciplined investing and compounding. Each
+      monthly investment buys mutual fund units at different market levels,
+      reducing the impact of market volatility through a concept known as
+      rupee cost averaging.
+    </p>
+
+    <h2>How SIP is Different from FD and Lumpsum</h2>
+    <p>
+      Fixed Deposits offer stable and predictable returns but usually fail to
+      beat inflation in the long term. Lumpsum investments can generate higher
+      returns but require correct market timing, which is difficult for most
+      investors.
+    </p>
+
+    <p>
+      SIPs balance risk and return by spreading investments over time. This
+      makes SIPs suitable for beginners, salaried individuals, and long-term
+      wealth creators.
+    </p>
+
+    <h2>Benefits of SIP Investment</h2>
+    <ul>
+      <li>Disciplined saving habit</li>
+      <li>Power of compounding</li>
+      <li>Lower market timing risk</li>
+      <li>Affordable monthly investment</li>
+      <li>Suitable for long-term goals</li>
+    </ul>
+
+    <h2>Is SIP Safe?</h2>
+    <p>
+      SIPs are subject to market risks because they invest in mutual funds.
+      However, long-term SIP investments have historically delivered better
+      returns compared to traditional savings options. The key is staying
+      invested and avoiding emotional decisions.
+    </p>
+
+    <h2>Who Should Use SIP?</h2>
+    <p>
+      SIPs are ideal for first-time investors, young professionals, and anyone
+      planning long-term goals such as retirement, children’s education, or
+      wealth creation.
+    </p>
+  </section>
+
+  <section class="tool-disclaimer">
+    <p>
+      Disclaimer: This SIP calculator and comparison is for educational purposes
+      only. Returns shown are indicative and not guaranteed. Mutual fund
+      investments are subject to market risks. Please consult a financial
+      advisor before investing.
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> CalcTools. All rights reserved.</p>
+
+  <p class="footer-desc">
+    CalcTools provides free educational calculators and learning guides
+    for finance, health, and everyday calculations.
+  </p>
+
+  <nav class="footer-nav">
+    <a href="/about.html">About</a> |
+    <a href="/learn.html">Learn</a> |
+    <a href="/contact.html">Contact</a> |
+    <a href="/privacy-policy.html">Privacy Policy</a> |
+    <a href="/terms-and-conditions.html">Terms & Conditions</a>
+  </nav>
+
+  <p class="footer-disclaimer">
+    Disclaimer: All tools and articles are for educational purposes only
+    and do not constitute financial, medical, or professional advice.
+  </p>
+</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="../js/sip-calculator.js"></script>
+</body>
+</html>

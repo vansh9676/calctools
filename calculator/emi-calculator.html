@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EMI Calculator – Loan EMI with Interest & Graph</title>
+
+  <meta name="description" content="Calculate loan EMI, total interest, and repayment amount. Understand how loan tenure changes affect EMI with graphs and clear explanations.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/tools.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../learn.html">Learn</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container content-wrap">
+
+  <!-- INTRO -->
+  <section class="tool-container">
+    <h1>EMI Calculator</h1>
+    <p class="tool-intro">
+      Use this EMI calculator to estimate your monthly loan installment, total
+      interest payable, and total repayment amount. This tool is useful for
+      home loans, personal loans, and car loans.
+    </p>
+  </section>
+
+  <!-- EMI INPUTS -->
+  <section class="tool-container">
+
+    <div class="tool-group">
+      <label for="loanAmount">Loan Amount (₹)</label>
+      <input type="number" id="loanAmount" value="1000000">
+    </div>
+
+    <div class="tool-group">
+      <label for="interestRate">Interest Rate (% per annum)</label>
+      <input type="number" id="interestRate" value="9">
+    </div>
+       <div class="tool-group">
+         <label for="reducedTenure">
+           Reduced Tenure (Years) – Optional
+              </label>
+        <input type="number" id="reducedTenure" placeholder="e.g. 15">
+      </div>
+
+
+    <div class="tool-group">
+      <label for="loanTenure">Loan Tenure (Years)</label>
+      <input type="number" id="loanTenure" value="20">
+    </div>
+
+    <button class="tool-btn" id="calculateEmiBtn">Calculate EMI</button>
+
+  </section>
+
+  <!-- RESULTS -->
+  <section id="emiResultSection" class="tool-info" style="display:none;">
+
+    <h2>EMI Calculation Results</h2>
+
+    <div class="summary-grid">
+
+      <div class="summary-card sip">
+        <h3>Monthly EMI</h3>
+        <p class="amount" id="emiValue"></p>
+      </div>
+
+      <div class="summary-card fd">
+        <h3>Total Interest</h3>
+        <p class="amount" id="totalInterest"></p>
+      </div>
+
+      <div class="summary-card lump">
+        <h3>Total Payment</h3>
+        <p class="amount" id="totalPayment"></p>
+      </div>
+
+    </div>
+
+    <!-- LINE GRAPH -->
+    <h3 class="chart-title">Loan Balance Over Time</h3>
+
+    <div class="line-chart">
+      <svg id="emiGraph" viewBox="0 0 600 300" preserveAspectRatio="none">
+        <polyline
+          id="emiLine"
+          fill="none"
+          stroke="#38bdf8"
+          stroke-width="3"
+          points=""
+        />
+      </svg>
+    </div>
+        <p id="tenureImpactText" style="margin-top:20px; text-align:center;"></p>
+
+  </section>
+
+  <!-- EDUCATIONAL CONTENT -->
+  <section class="tool-info emi-content">
+
+    <h2>What is EMI?</h2>
+    <p>
+      EMI stands for Equated Monthly Installment. It is the fixed amount that a
+      borrower pays every month to repay a loan. Each EMI consists of two parts:
+      the principal portion and the interest portion.
+    </p>
+
+    <p>
+      In the early years of a loan, a larger part of the EMI goes towards interest.
+      As the loan tenure progresses, the interest component reduces and the
+      principal repayment increases.
+    </p>
+
+    <h2>How EMI is Calculated</h2>
+    <p>
+      EMI is calculated using a standard mathematical formula that considers the
+      loan amount, interest rate, and loan tenure. Even a small change in interest
+      rate or tenure can significantly impact the EMI and total interest paid.
+    </p>
+
+    <h2>Benefits of Using an EMI Calculator</h2>
+    <ul>
+      <li>Helps plan monthly finances</li>
+      <li>Shows total interest burden</li>
+      <li>Allows loan comparison across banks</li>
+      <li>Prevents over-borrowing</li>
+    </ul>
+
+    <h2>EMI for Different Loan Types</h2>
+    <p>
+      EMI calculation works similarly for home loans, car loans, and personal
+      loans. However, interest rates and tenures differ significantly. Home loans
+      usually have longer tenures and lower interest rates, while personal loans
+      have higher rates and shorter durations.
+    </p>
+
+    <h2>Should You Choose Longer or Shorter Tenure?</h2>
+    <p>
+      Longer tenure reduces EMI but increases total interest paid. Shorter tenure
+      increases EMI but saves interest. Choosing the right tenure depends on your
+      income stability and financial goals.
+    </p>
+      <h2>Limitations of BMI</h2>
+      <p>
+        BMI does not directly measure body fat and may not accurately represent
+        athletes, elderly individuals, or children. People with the same BMI
+        may have different health profiles.
+        </p>
+
+      <p>
+        BMI should be used only as a general indicator and not as a medical
+        diagnosis.
+      </p>
+
+  </section>
+
+  <section class="tool-disclaimer">
+    <p>
+      Disclaimer: This EMI calculator is for educational purposes only.
+      Actual loan EMI may vary depending on bank policies, processing fees,
+      and interest rate changes. Please consult your lender before taking a loan.
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> CalcTools. All rights reserved.</p>
+
+  <p class="footer-desc">
+    CalcTools provides free educational calculators and learning guides
+    for finance, health, and everyday calculations.
+  </p>
+
+  <nav class="footer-nav">
+    <a href="../about.html">About</a> |
+    <a href="../learn.html">Learn</a> |
+    <a href="../contact.html">Contact</a> |
+    <a href="../privacy-policy.html">Privacy Policy</a> |
+    <a href="../terms-and-conditions.html">Terms & Conditions</a>
+  </nav>
+
+  <p class="footer-disclaimer">
+    Disclaimer: All tools and articles are for educational purposes only
+    and do not constitute financial, medical, or professional advice.
+  </p>
+</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script src="../js/emi.js"></script>
+</body>
+</html>
