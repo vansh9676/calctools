@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SIP Calculator: Systematic Investment Plan Return Estimator | CalcTools</title>
+  
+  <meta name="description" content="Calculate the future value of your SIPs with our advanced SIP Calculator. Understand Rupee Cost Averaging, compounding benefits, and mutual fund taxation rules.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>SIP Calculator</h1>
+    <p>Visualize the power of compounding. Calculate returns for your monthly investments.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-header">
+      <div class="calc-tab active" data-type="sip">SIP</div>
+      <a href="lumpsum-calculator.html" class="calc-tab" style="text-decoration:none; color:inherit;">Lumpsum</a>
+    </div>
+
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label" id="amt-label">Monthly Investment</span>
+            <div class="input-val" id="display-amt">₹5,000</div>
+          </div>
+          <input type="range" id="amt-slider" min="500" max="100000" step="500" value="5000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Expected Return Rate (p.a)</span>
+            <div class="input-val" id="display-rate">12%</div>
+          </div>
+          <input type="range" id="rate-slider" min="1" max="30" step="0.5" value="12">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Time Period</span>
+            <div class="input-val" id="display-years">10 Yr</div>
+          </div>
+          <input type="range" id="years-slider" min="1" max="40" step="1" value="10">
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="sipChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Invested Amount</span>
+            <span id="res-invested">₹6,00,000</span>
+          </div>
+          <div class="result-item">
+            <span>Est. Returns</span>
+            <span id="res-gains" style="color:var(--accent-green);">₹5,61,695</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Total Value</span>
+            <span id="res-total" style="font-size:1.4rem; color:var(--accent-blue); font-weight:700;">₹11,61,695</span>
+          </div>
+        </div>
+        
+        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;">Start Investing Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>Understanding Systematic Investment Plans (SIP)</h2>
+        <p>
+          A Systematic Investment Plan (SIP) is not a product; it is a <strong>method</strong> of investing in Mutual Funds. It allows an investor to invest a fixed amount regularly (weekly, monthly, or quarterly) in a mutual fund scheme.
+        </p>
+        <p>
+          In India, SIPs have become the preferred route for retail investors to enter the equity market. Why? Because they remove the need to "time the market." Whether the Sensex is at an all-time high or crashing, your SIP continues, ensuring disciplined wealth creation.
+        </p>
+
+        <h3>1. The Magic of Rupee Cost Averaging</h3>
+        <p>
+          The biggest advantage of SIP is Rupee Cost Averaging. Since you invest a fixed amount every month, you buy more units when the market is low (NAV is low) and fewer units when the market is high (NAV is high).
+        </p>
+        
+        
+        <div class="highlight-box">
+          <strong>Example:</strong><br>
+          • Month 1 (Market High): Invest ₹5,000 @ NAV ₹50 = You get <strong>100 Units</strong>.<br>
+          • Month 2 (Market Crash): Invest ₹5,000 @ NAV ₹25 = You get <strong>200 Units</strong>.<br>
+          • <strong>Total:</strong> You now own 300 units at an average cost of ₹33.33, lower than the starting price!
+        </div>
+        <p>
+          This mechanism automatically lowers your average cost of acquisition over time, protecting you from short-term market volatility.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>The Power of Compounding in SIPs</h2>
+        <p>
+          Compounding is often called the "Eighth Wonder of the World." In simple terms, it is the interest earned on your interest. In mutual funds, your returns are reinvested, generating further returns.
+        </p>
+        
+        
+        <p>
+          The key variable in compounding is <strong>Time</strong>, not just money. Let's compare two investors:
+        </p>
+        <ul style="margin: 20px; list-style:disc; color:#d1d5db;">
+          <li style="margin-bottom:15px;">
+            <strong>Investor A (Starts at 25):</strong> Invests ₹5,000/month for 10 years, then stops but keeps money invested.
+          </li>
+          <li>
+            <strong>Investor B (Starts at 35):</strong> Invests ₹5,000/month for 25 years until age 60.
+          </li>
+        </ul>
+        <p>
+          Surprisingly, <strong>Investor A often ends up with more money</strong> simply because their money had more time to grow. This is why financial advisors recommend starting your SIP as early as possible, even with a small amount.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>SIP vs. Lumpsum: Which is Better?</h2>
+        <p>
+          This is a common dilemma. Should you invest all your money at once (Lumpsum) or spread it out (SIP)?
+        </p>
+        
+        <div style="overflow-x:auto; margin: 20px 0;">
+          <table style="width:100%; border-collapse: collapse; text-align: left; color: #d1d5db;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color);">
+                <th style="padding: 15px;">Feature</th>
+                <th style="padding: 15px;">SIP (Systematic)</th>
+                <th style="padding: 15px;">Lumpsum (One-time)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Market Timing</strong></td>
+                <td style="padding: 15px;">Not Required (Averaging works)</td>
+                <td style="padding: 15px; color:#f87171;">Critical (Risk of buying at peak)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Risk</strong></td>
+                <td style="padding: 15px; color:var(--accent-green);">Lower (Spread over time)</td>
+                <td style="padding: 15px;">Higher (Immediate exposure)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Suitability</strong></td>
+                <td style="padding: 15px;">Salaried / Regular Income</td>
+                <td style="padding: 15px;">Bonus / Property Sale / Windfall</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <strong>Pro Tip:</strong> If you have a large lumpsum amount but are afraid of market highs, use an <strong>STP (Systematic Transfer Plan)</strong>. Invest the lumpsum in a Liquid Fund and transfer a fixed amount daily/weekly into an Equity Fund.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>Taxation on Mutual Fund Returns</h2>
+        <p>
+          Before 2018, Long Term Capital Gains (LTCG) on equity were tax-free. Now, rules have changed. It is crucial to understand the tax implications of your SIP returns.
+        </p>
+        
+        <h3>Equity Mutual Funds (Holding > 65% in Shares)</h3>
+        <ul style="margin: 20px; list-style:disc; color:#d1d5db;">
+          <li style="margin-bottom:10px;">
+            <strong>Short Term Capital Gains (STCG):</strong> If sold before 1 year, profits are taxed at a flat rate of <strong>15%</strong>.
+          </li>
+          <li>
+            <strong>Long Term Capital Gains (LTCG):</strong> If sold after 1 year, profits above ₹1.25 Lakhs in a financial year are taxed at <strong>12.5%</strong>. (Updated as per latest Budget).
+          </li>
+        </ul>
+
+        <h3>Debt Mutual Funds</h3>
+        <p>
+          As of April 2023, the indexation benefit for Debt Funds has been removed. Returns from Debt Funds are now added to your taxable income and taxed as per your <strong>Income Tax Slab</strong>, regardless of the holding period.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div style="margin-top: 30px;">
+          <h3 style="font-size: 1.2rem; color: #e5e7eb;">Can I stop my SIP anytime?</h3>
+          <p>
+            Yes. SIP is a voluntary commitment. You can pause, stop, or increase your SIP amount at any time without any penalty from the Mutual Fund house. However, banks might charge a small ECS failure fee if you don't cancel the mandate in time.
+          </p>
+
+          <h3 style="font-size: 1.2rem; color: #e5e7eb;">Is SIP safe?</h3>
+          <p>
+            SIP is a method, not an instrument. The safety depends on the underlying fund. Equity funds carry market risk, while Debt funds are relatively safer. Over the long term (10+ years), equity SIPs in India have historically never delivered negative returns.
+          </p>
+
+          <h3 style="font-size: 1.2rem; color: #e5e7eb;">What is the minimum amount for SIP?</h3>
+          <p>
+            Most Mutual Fund schemes allow you to start a SIP with as little as <strong>₹500 per month</strong>. This democratizes investing, allowing students and young professionals to start building wealth early.
+          </p>
+        </div>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer & Risk Warning</h4>
+          <p>
+            <strong>Not Financial Advice:</strong> The calculators and tools on CalcTools are designed for educational and informational purposes only. They do not constitute financial, investment, legal, or tax advice.
+          </p>
+          <p>
+            <strong>Accuracy:</strong> While we strive for precision, these calculators use standard mathematical formulas and historical data which may not reflect actual market conditions. Mutual Fund investments are subject to market risks; read all scheme-related documents carefully.
+          </p>
+        </div>
+      </div>
+    
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    
+    <div class="link-box">
+      <div class="link-box-title">Mutual Fund Tools</div>
+      <ul class="link-list">
+        <li><a href="sip-calculator.html" class="active">SIP Calculator</a></li>
+        <li><a href="lumpsum-calculator.html">Lumpsum Calculator</a></li>
+        <li><a href="swp-calculator.html">SWP Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Banking & Post Office</div>
+      <ul class="link-list">
+        <li><a href="../bank-accounts/fd-calculator.html">FD Calculator</a></li>
+        <li><a href="../bank-accounts/rd-calculator.html">RD Calculator</a></li>
+        <li><a href="../bank-accounts/ppf-calculator.html">PPF Calculator</a></li>
+        <li><a href="../retirement/ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Loans & Tax</div>
+      <ul class="link-list">
+        <li><a href="../loans/home-loan-calculator.html">Home Loan EMI</a></li>
+        <li><a href="../taxes/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="../taxes/income-tax-calculator.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+   
+
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">Empowering your financial journey with accurate tools.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="sip-calculator.html">SIP Calculator</a>
+      <a href="../loans/emi-calculator.html">EMI Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/sip.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Loan EMI Calculator: Flat vs Reducing Rate Check | CalcTools</title>
+  
+  <meta name="description" content="Calculate your Car Loan EMI. Avoid the 'Flat Rate' trap used by dealers. Check interest payable for 3, 5, or 7 year tenures.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>Car Loan Calculator</h1>
+    <p>Drive your dream car without wrecking your finances. Check your real affordability.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-header">
+      <div class="calc-tab" data-type="home">Home Loan</div>
+      <div class="calc-tab active" data-type="car">Car Loan</div>
+      <div class="calc-tab" data-type="personal">Personal Loan</div>
+    </div>
+
+    <div class="calc-body">
+      <div class="calc-inputs">
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Loan Amount</span>
+            <div class="input-val" id="display-loan">₹10,00,000</div>
+          </div>
+          <input type="range" id="loan-slider" min="100000" max="5000000" step="10000" value="1000000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Interest Rate (p.a)</span>
+            <div class="input-val" id="display-rate">9.5%</div>
+          </div>
+          <input type="range" id="rate-slider" min="1" max="20" step="0.1" value="9.5">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Loan Tenure</span>
+            <div class="input-val" id="display-years">5 Yr</div>
+          </div>
+          <input type="range" id="years-slider" min="1" max="10" step="1" value="5">
+        </div>
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="emiChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Monthly EMI</span>
+            <span id="res-emi" style="color:var(--accent-blue); font-weight:700; font-size:1.2rem;">₹21,002</span>
+          </div>
+          <div class="result-item">
+            <span>Principal Amount</span>
+            <span id="res-principal">₹10,00,000</span>
+          </div>
+          <div class="result-item">
+            <span>Total Interest</span>
+            <span id="res-interest" style="color:#f87171;">₹2,60,112</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Total Cost</span>
+            <span id="res-total" style="font-size:1.1rem; font-weight:700;">₹12,60,112</span>
+          </div>
+        </div>
+        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;">Compare Car Loans</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>Car Loan Scam Alert: Flat vs. Reducing Rate</h2>
+        <p>
+          This is the #1 mistake Indian car buyers make. When you walk into a showroom, the dealer might offer you a loan at a "Flat Rate" of 4%. This sounds incredibly cheap compared to a Bank's 9% rate. <strong>Do not be fooled.</strong>
+        </p>
+        
+        
+        <div class="highlight-box">
+          <strong>The Trap:</strong><br>
+          • <strong>Flat Rate (4%):</strong> Interest is calculated on the <em>original</em> loan amount for the entire tenure. You pay interest even on the money you have already repaid.<br>
+          • <strong>Reducing Rate (9%):</strong> Interest is calculated only on the <em>outstanding</em> balance.<br>
+          <strong>Reality Check:</strong> A 4% Flat Rate is mathematically equivalent to an <strong>8-9% Reducing Rate</strong>. Always ask the lender for the "Annualized Percentage Rate" (APR) or the reducing balance rate.
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>The "Depreciation" Factor</h2>
+        <p>
+          Unlike a Home Loan (where the asset appreciates), a Car Loan is for a depreciating asset. As soon as you drive a new car out of the showroom, it loses 10-15% of its value.
+        </p>
+        <p>
+          <strong>The 20/4/10 Rule for Car Buying:</strong>
+          <br>To ensure you don't overspend on a depreciating asset, financial experts suggest:
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>20% Down Payment:</strong> Pay at least 20% upfront. Never take a 100% funding loan.</li>
+          <li><strong>4 Years Tenure:</strong> Don't stretch the loan to 7 years just to lower the EMI. You will end up paying more interest than the car's resale value.</li>
+          <li><strong>10% of Income:</strong> Your car EMI (plus insurance and fuel) should not exceed 10% of your monthly take-home salary.</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>Foreclosure and Prepayment Charges</h2>
+        <p>
+          Car loans in India (unlike Home Loans) usually carry a <strong>Foreclosure Penalty</strong>.
+        </p>
+        <ul style="margin: 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Fixed Rate Loans:</strong> Most car loans are fixed-rate. Banks charge 3% to 6% of the outstanding principal if you want to close the loan early.</li>
+          <li><strong>Lock-in Period:</strong> Many lenders do not allow you to prepay the loan for the first 6 to 12 months.</li>
+          <li><strong>Strategy:</strong> If you expect a bonus or windfall in the future, negotiate a "Zero Foreclosure Charge" clause <em>before</em> signing the loan agreement. Some PSU banks offer this.</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>Loan Against Car (Top-Up)</h2>
+        <p>
+          If you have repaid a significant portion of your car loan and need urgent cash, you can opt for a "Top-Up Loan" or "Loan Against Car." 
+          <br>Since the car is already collateral with the bank, the processing is fast, and rates are cheaper than Personal Loans (usually 1-2% higher than your existing car loan rate).
+        </p>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer & Risk Warning</h4>
+          <p>
+            <strong>Not Financial Advice:</strong> This tool is for estimation only. Final EMI depends on your Credit Score and the bank's LTV (Loan to Value) ratio.
+          </p>
+          <p>
+            <strong>Rates:</strong> Interest rates mentioned (8.5% - 11%) are indicative market averages and subject to change by RBI policies.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    
+    <div class="link-box">
+      <div class="link-box-title">Loan Calculators</div>
+      <ul class="link-list">
+        <li><a href="home-loan-calculator.html">Home Loan EMI</a></li>
+        <li><a href="car-loan-calculator.html" class="active">Car Loan EMI</a></li> <li><a href="personal-loan-calculator.html">Personal Loan EMI</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Investment Tools</div>
+      <ul class="link-list">
+        <li><a href="../mutual-fund/sip-calculator.html">SIP Calculator</a></li>
+        <li><a href="../mutual-fund/lumpsum-calculator.html">Lumpsum Calculator</a></li>
+        <li><a href="../mutual-fund/swp-calculator.html">SWP Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Banking & Tax</div>
+      <ul class="link-list">
+        <li><a href="../bank-accounts/fd-calculator.html">FD Calculator</a></li>
+        <li><a href="../bank-accounts/ppf-calculator.html">PPF Calculator</a></li>
+        <li><a href="../taxes/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="../taxes/income-tax-calculator.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+
+   
+
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="../mutual-fund/sip-calculator.html">SIP Calculator</a>
+      <a href="home-loan-calculator.html">Home Loan EMI</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/emi.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Programmatically click the "Car Loan" tab
+    const carTab = document.querySelector('.calc-tab[data-type="car"]');
+    if(carTab) carTab.click();
+  });
+</script>
+
+</body>
+</html>

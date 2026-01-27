@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PPF Calculator: Public Provident Fund Interest & Maturity | CalcTools</title>
+  
+  <meta name="description" content="Calculate Public Provident Fund (PPF) returns. Understand Section 80C tax benefits, interest rates (7.1%), and loan against PPF rules.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>PPF Calculator</h1>
+    <p>The King of Tax Saving. Zero Risk. Tax-Free Returns.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Yearly Investment</span>
+            <div class="input-val" id="display-amt">₹1,50,000</div>
+          </div>
+          <input type="range" id="amt-slider" min="500" max="150000" step="500" value="150000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Time Period</span>
+            <div class="input-val" id="display-years">15 Yr</div>
+          </div>
+          <input type="range" id="years-slider" min="15" max="50" step="5" value="15">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Interest Rate (Current)</span>
+            <div class="input-val" id="display-rate">7.1%</div>
+          </div>
+          <input type="range" id="rate-slider" min="6" max="9" step="0.1" value="7.1">
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="ppfChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Invested Amount</span>
+            <span id="res-invested">₹22,50,000</span>
+          </div>
+          <div class="result-item">
+            <span>Total Interest</span>
+            <span id="res-interest" style="color:var(--accent-green);">₹18,18,209</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Maturity Value</span>
+            <span id="res-total" style="font-size:1.4rem; color:var(--accent-blue); font-weight:700;">₹40,68,209</span>
+          </div>
+        </div>
+        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;">Open PPF Account</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>Why PPF is India's Favorite Investment</h2>
+        <p>
+          The Public Provident Fund (PPF) is a government-backed savings scheme launched in 1968. It was designed to mobilize small savings while offering a secure investment avenue with tax benefits.
+        </p>
+        <p>
+          Unlike Mutual Funds or Stocks, PPF returns are <strong>guaranteed by the Government of India</strong>. This makes it the safest investment product in the country, safer even than Bank FDs.
+        </p>
+
+        <h3>The "EEE" Tax Advantage</h3>
+        <p>
+          PPF is one of the few instruments that enjoy the "Exempt-Exempt-Exempt" status:
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Exempt on Investment:</strong> The money you deposit (up to ₹1.5L) is deductible under Section 80C.</li>
+          <li><strong>Exempt on Interest:</strong> The interest earned every year is NOT added to your taxable income.</li>
+          <li><strong>Exempt on Maturity:</strong> The final amount you withdraw after 15 years is 100% tax-free.</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>Interest Calculation: The "5th of the Month" Rule</h2>
+        <p>
+          Many investors lose money because they don't know this rule.
+          <br><strong>The Rule:</strong> Interest is calculated on the <em>lowest balance</em> in your account between the 5th and the last day of the month.
+        </p>
+        <div class="highlight-box">
+          <strong>Pro Tip:</strong> Always deposit your PPF contribution <strong>before the 5th</strong> of the month.
+          <br>If you deposit on the 6th, you lose interest on that amount for the entire month. Over 15 years, this small delay can cost you thousands in lost interest.
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Liquidity: Loans and Partial Withdrawals</h2>
+        <p>
+          While PPF has a 15-year lock-in, it is not completely illiquid.
+        </p>
+        
+        <h3>1. Loan Against PPF</h3>
+        <p>
+          Available from the 3rd financial year up to the 6th financial year.
+          <br><strong>Interest Rate:</strong> You pay only 1% interest per annum. This is likely the cheapest loan you will ever get.
+        </p>
+
+        <h3>2. Partial Withdrawals</h3>
+        <p>
+          Allowed from the 7th financial year onwards. You can withdraw up to 50% of the balance at the end of the 4th preceding year or the immediate preceding year, whichever is lower.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>What Happens After 15 Years?</h2>
+        <p>
+          When your account matures, you have three options:
+        </p>
+        <ol style="margin: 20px 0 20px 20px; color:#d1d5db;">
+          <li style="margin-bottom:10px;"><strong>Close the Account:</strong> Withdraw the entire corpus tax-free.</li>
+          <li style="margin-bottom:10px;"><strong>Extend Without Contribution:</strong> Keep the money in the account. It continues earning interest, and you can withdraw any amount anytime.</li>
+          <li><strong>Extend With Contribution:</strong> You can extend the account in blocks of 5 years. You must submit Form H within one year of maturity to choose this option.</li>
+        </ol>
+      </article>
+
+      <article class="article-block">
+        <h2>PPF vs. ELSS vs. FD</h2>
+        <div style="overflow-x:auto; margin: 20px 0;">
+          <table style="width:100%; border-collapse: collapse; text-align: left; color: #d1d5db;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color);">
+                <th style="padding: 15px;">Feature</th>
+                <th style="padding: 15px;">PPF</th>
+                <th style="padding: 15px;">ELSS (Mutual Fund)</th>
+                <th style="padding: 15px;">Tax Saver FD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Returns</strong></td>
+                <td style="padding: 15px;">~7.1% (Guaranteed)</td>
+                <td style="padding: 15px;">~12-15% (Variable)</td>
+                <td style="padding: 15px;">~6.5% (Guaranteed)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Lock-in</strong></td>
+                <td style="padding: 15px;">15 Years</td>
+                <td style="padding: 15px;">3 Years (Lowest)</td>
+                <td style="padding: 15px;">5 Years</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Tax on Maturity</strong></td>
+                <td style="padding: 15px; color:var(--accent-green);">Tax Free</td>
+                <td style="padding: 15px;">12.5% LTCG</td>
+                <td style="padding: 15px;">Fully Taxable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer</h4>
+          <p>
+            <strong>Rates:</strong> PPF interest rates are reviewed by the Finance Ministry every quarter. The calculation above assumes a constant rate for the entire tenure, which may differ from reality.
+          </p>
+          <p>
+            <strong>Investment Limit:</strong> Maximum investment allowed in PPF is ₹1.5 Lakhs per financial year per individual.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    
+    <div class="link-box">
+      <div class="link-box-title">Mutual Fund Tools</div>
+      <ul class="link-list">
+        <li><a href="../mutual-fund/sip-calculator.html">SIP Calculator</a></li>
+        <li><a href="../mutual-fund/lumpsum-calculator.html">Lumpsum Calculator</a></li>
+        <li><a href="../mutual-fund/swp-calculator.html">SWP Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Banking & Post Office</div>
+      <ul class="link-list">
+        <li><a href="fd-calculator.html">FD Calculator</a></li>
+        <li><a href="rd-calculator.html">RD Calculator</a></li>
+        <li><a href="ppf-calculator.html" class="active">PPF Calculator</a></li> <li><a href="../retirement/ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Loans & Tax</div>
+      <ul class="link-list">
+        <li><a href="../loans/home-loan-calculator.html">Home Loan EMI</a></li>
+        <li><a href="../taxes/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="../taxes/income-tax-calculator.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+
+  
+
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="../mutual-fund/sip-calculator.html">SIP Calculator</a>
+      <a href="ppf-calculator.html">PPF Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/ppf.js"></script>
+
+</body>
+</html>

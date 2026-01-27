@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Loan EMI Calculator: Check Eligibility & Tax Benefits | CalcTools</title>
+  
+  <meta name="description" content="Calculate your Home Loan EMI, total interest, and amortization schedule. Learn about PMAY subsidy, Section 80EEA tax benefits, and how to close your loan in 10 years.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>Home Loan Calculator</h1>
+    <p>Your dream home shouldn't be a debt trap. Plan your EMI and Tax Savings.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-header">
+      <div class="calc-tab active" data-type="home">Home Loan</div>
+      <div class="calc-tab" data-type="car">Car Loan</div>
+      <div class="calc-tab" data-type="personal">Personal Loan</div>
+    </div>
+
+    <div class="calc-body">
+      <div class="calc-inputs">
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Loan Amount</span>
+            <div class="input-val" id="display-loan">₹50,00,000</div>
+          </div>
+          <input type="range" id="loan-slider" min="100000" max="10000000" step="50000" value="5000000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Interest Rate (p.a)</span>
+            <div class="input-val" id="display-rate">8.5%</div>
+          </div>
+          <input type="range" id="rate-slider" min="1" max="20" step="0.1" value="8.5">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Loan Tenure</span>
+            <div class="input-val" id="display-years">20 Yr</div>
+          </div>
+          <input type="range" id="years-slider" min="1" max="30" step="1" value="20">
+        </div>
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="emiChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Monthly EMI</span>
+            <span id="res-emi" style="color:var(--accent-blue); font-weight:700; font-size:1.2rem;">₹43,391</span>
+          </div>
+          <div class="result-item">
+            <span>Total Interest</span>
+            <span id="res-interest" style="color:#f87171;">₹54,13,879</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Total Amount</span>
+            <span id="res-total" style="font-size:1.1rem; font-weight:700;">₹1,04,13,879</span>
+          </div>
+        </div>
+        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;">Download Amortization Table</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>The Complete Guide to Home Loans in India</h2>
+        <p>
+          Buying a home is the biggest financial decision in an Indian's life. While the emotion of owning a house is great, the math behind the loan can be tricky. 
+          A Home Loan is a secured loan where the property itself acts as collateral. If you fail to repay, the bank has the legal right to seize and sell the property (under the SARFAESI Act).
+        </p>
+
+        <h3>1. The "Hidden" Cost of Long Tenure</h3>
+        <p>
+          Banks often encourage you to take a 30-year loan to reduce your EMI. Do not fall for this trap.
+        </p>
+        
+        
+        <div class="highlight-box">
+          <strong>The Math:</strong><br>
+          • <strong>20 Year Loan:</strong> Interest Payable = 108% of Loan Amount.<br>
+          • <strong>30 Year Loan:</strong> Interest Payable = <strong>170%</strong> of Loan Amount.<br>
+          Just by extending the tenure by 10 years, you pay nearly double the interest. Always try to limit your tenure to 15 or 20 years maximum.
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Tax Benefits: How to Save ₹3.5 Lakhs/Year</h2>
+        <p>
+          The government effectively subsidizes your home loan through tax deductions. If planned well, your "effective" interest rate can drop from 8.5% to around 6%.
+        </p>
+        
+        <div style="overflow-x:auto; margin: 20px 0;">
+          <table style="width:100%; border-collapse: collapse; text-align: left; color: #d1d5db;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color);">
+                <th style="padding: 15px;">Section</th>
+                <th style="padding: 15px;">Deduction Limit</th>
+                <th style="padding: 15px;">Applicability</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>80C (Principal)</strong></td>
+                <td style="padding: 15px;">₹1.5 Lakhs</td>
+                <td style="padding: 15px;">Included in the overall 80C limit (with PPF/ELSS).</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>24(b) (Interest)</strong></td>
+                <td style="padding: 15px;">₹2.0 Lakhs</td>
+                <td style="padding: 15px;">For Self-Occupied properties.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>80EEA (Extra)</strong></td>
+                <td style="padding: 15px;">₹1.5 Lakhs</td>
+                <td style="padding: 15px;">For First-time buyers (Property value &lt; ₹45L).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Pradhan Mantri Awas Yojana (PMAY)</h2>
+        <p>
+          If you are a first-time home buyer with an annual income below ₹18 Lakhs, you might be eligible for the <strong>Credit Linked Subsidy Scheme (CLSS)</strong>.
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Subsidy Amount:</strong> Up to ₹2.67 Lakhs upfront.</li>
+          <li><strong>Impact:</strong> The subsidy is deducted from your principal amount immediately. This reduces your EMI burden for the entire 20-year tenure.</li>
+          <li><strong>Process:</strong> You don't apply separately; your bank (lender) processes this claim with the NHB (National Housing Bank).</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>Repo Rate vs. MCLR: Know Your Benchmark</h2>
+        <p>
+          Since October 2019, all new floating rate home loans are linked to an external benchmark, usually the <strong>Repo Rate (RLLR)</strong>.
+        </p>
+        <p>
+          <strong>Why this matters:</strong>
+          <br>In the old MCLR system, banks were slow to pass on rate cuts to borrowers. Under RLLR, if RBI cuts the repo rate by 0.25%, your home loan rate <em>must</em> drop by 0.25% within 3 months. This ensures transparency.
+          <br><em>Tip: If you are still on an old Base Rate or MCLR loan, ask your bank to switch you to RLLR immediately.</em>
+        </p>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer & Risk Warning</h4>
+          <p>
+            <strong>Educational Use Only:</strong> This tool provides estimates based on standard amortization formulas. Actual loan terms depend on your Credit Score (CIBIL), income, and bank policies.
+          </p>
+          <p>
+            <strong>Tax Rules:</strong> Tax laws (Section 80C, 24b) change with Union Budgets. Please consult a CA for exact tax filing advice.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    
+    <div class="link-box">
+      <div class="link-box-title">Loan Calculators</div>
+      <ul class="link-list">
+        <li><a href="home-loan-calculator.html" class="active">Home Loan EMI</a></li> <li><a href="car-loan-calculator.html">Car Loan EMI</a></li>
+        <li><a href="personal-loan-calculator.html">Personal Loan EMI</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Investment Tools</div>
+      <ul class="link-list">
+        <li><a href="../mutual-fund/sip-calculator.html">SIP Calculator</a></li>
+        <li><a href="../mutual-fund/lumpsum-calculator.html">Lumpsum Calculator</a></li>
+        <li><a href="../mutual-fund/swp-calculator.html">SWP Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Banking & Tax</div>
+      <ul class="link-list">
+        <li><a href="../bank-accounts/fd-calculator.html">FD Calculator</a></li>
+        <li><a href="../bank-accounts/ppf-calculator.html">PPF Calculator</a></li>
+        <li><a href="../taxes/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="../taxes/income-tax-calculator.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+
+   
+
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="../mutual-fund/sip-calculator.html">SIP Calculator</a>
+      <a href="emi-calculator.html">EMI Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/emi.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Programmatically click the "Home Loan" tab to ensure correct defaults
+    const homeTab = document.querySelector('.calc-tab[data-type="home"]');
+    if(homeTab) homeTab.click();
+  });
+</script>
+
+</body>
+</html>

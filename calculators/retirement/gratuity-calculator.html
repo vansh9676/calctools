@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gratuity Calculator: Check Gratuity Eligibility & Amount | CalcTools</title>
+  
+  <meta name="description" content="Calculate your Gratuity amount instantly. Understand the 5-year eligibility rule, 15/26 calculation formula, and tax exemption limits up to ₹20 Lakhs.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>Gratuity Calculator</h1>
+    <p>Leaving your job? Check how much Gratuity you are entitled to receive.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div style="margin-bottom: 25px;">
+          <span class="input-label" style="display:block; margin-bottom:10px;">Are you covered under Gratuity Act?</span>
+          <div style="background: #1e293b; padding: 5px; border-radius: 8px; display: inline-flex; border: 1px solid #334155;">
+            <button class="mode-btn active" data-covered="yes" style="padding: 8px 15px; border-radius: 6px; border: none; background: #38bdf8; color: #0f172a; font-weight: 700; cursor: pointer;">Yes (Most Common)</button>
+            <button class="mode-btn" data-covered="no" style="padding: 8px 15px; border-radius: 6px; border: none; background: transparent; color: #9ca3af; font-weight: 600; cursor: pointer;">No</button>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Basic Salary + DA</span>
+            <div class="input-val" id="display-salary">₹50,000</div>
+          </div>
+          <input type="range" id="salary-slider" min="10000" max="500000" step="1000" value="50000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Years of Service</span>
+            <div class="input-val" id="display-years">5 Yr</div>
+          </div>
+          <input type="range" id="years-slider" min="1" max="40" step="1" value="5">
+          <p id="eligibility-warning" style="font-size:0.8rem; color:#f87171; margin-top:5px; display:none;">Warning: Minimum 5 years required for eligibility.</p>
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="gratuityChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Formula Used</span>
+            <span id="res-formula" style="font-size:0.9rem;">15/26 * Salary * Years</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Gratuity Payable</span>
+            <span id="res-total" style="font-size:1.4rem; color:var(--accent-blue); font-weight:700;">₹1,44,231</span>
+          </div>
+          <div class="result-item" style="justify-content:center; margin-top:10px;">
+            <span id="res-tax" style="color:#22c55e; font-size:0.9rem;">Likely Tax Free*</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>What is Gratuity?</h2>
+        <p>
+          Gratuity is a lump sum benefit paid by an employer to an employee as a token of gratitude for the services rendered. It is governed by the <strong>Payment of Gratuity Act, 1972</strong>.
+        </p>
+        <p>
+          It serves as a critical retirement benefit, similar to Provident Fund (PF). However, unlike PF where you contribute monthly, Gratuity is paid entirely by the employer.
+        </p>
+
+        <h3>The "5-Year Rule" for Eligibility</h3>
+        <p>
+          This is the most important condition. To be eligible for gratuity, an employee must complete <strong>5 continuous years of service</strong> with the same organization.
+        </p>
+        <div class="highlight-box">
+          <strong>Exceptions to the 5-Year Rule:</strong>
+          <br>The condition of 5 years is waived off if the employment is terminated due to:
+          <br>1. Death of the employee (Paid to nominee).
+          <br>2. Disablement due to accident or disease.
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>How Gratuity is Calculated (The Formula)</h2>
+        <p>
+          The math depends on whether your organization is covered under the Gratuity Act (most private companies with >10 employees are covered).
+        </p>
+
+        <h3>Scenario A: Covered under Gratuity Act (Standard)</h3>
+        <p>
+          The formula considers 26 working days in a month. You get 15 days of salary for every completed year of service.
+          <br><strong>Formula:</strong> (15 / 26) * Last Drawn Salary * Years of Service
+          <br><em>Note: Any service above 6 months is rounded up to the next year. E.g., 5 years 7 months = 6 years.</em>
+        </p>
+
+        <h3>Scenario B: Not Covered under Gratuity Act</h3>
+        <p>
+          For employees not covered by the Act, the calculation assumes 30 days in a month.
+          <br><strong>Formula:</strong> (15 / 30) * Last Drawn Salary * Years of Service
+          <br><em>Note: No rounding up. 5 years 11 months is counted as just 5 years.</em>
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>Tax Exemptions on Gratuity</h2>
+        <p>
+          The Income Tax treatment of gratuity depends on the type of employee:
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Government Employees:</strong> Gratuity is fully tax-free.</li>
+          <li><strong>Private Employees (Covered by Act):</strong> Tax-free up to the <strong>least</strong> of the following:
+            <br>1. Actual Gratuity received.
+            <br>2. ₹20 Lakhs (Limit hiked from ₹10L in 2019).
+            <br>3. 15 days salary based on last drawn salary for each year of service.
+          </li>
+        </ul>
+        <p>
+          Any amount exceeding ₹20 Lakhs is taxable as per your income tax slab.
+        </p>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer</h4>
+          <p>
+            <strong>Eligibility:</strong> If you resign after 4 years and 11 months, you get ₹0. Gratuity is strictly for 5+ years of continuous service.
+          </p>
+          <p>
+            <strong>Salary Definition:</strong> For calculation, "Salary" = Basic Pay + Dearness Allowance (DA). It excludes HRA, Special Allowances, and Bonuses.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    <div class="link-box">
+      <div class="link-box-title">Retirement Tools</div>
+      <ul class="link-list">
+        <li><a href="gratuity-calculator.html" class="active">Gratuity Calculator</a></li>
+        <li><a href="epf-calculator.html">EPF Calculator</a></li>
+        <li><a href="nps-calculator.html">NPS Calculator</a></li>
+        <li><a href="ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Retirement</h4>
+      <a href="nps-calculator.html">NPS Calculator</a>
+      <a href="epf-calculator.html">EPF Calculator</a>
+      <a href="gratuity-calculator.html">Gratuity Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/gratuity.js"></script>
+
+</body>
+</html>

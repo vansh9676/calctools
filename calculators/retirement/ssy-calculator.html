@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SSY  (Sukanya Samriddhi Yojana): Sukanya Samriddhi Yojana Interest Calculator | CalcTools</title>
+  
+  <meta name="description" content="Calculate returns for your daughter's future with our SSY Calculator. Understand current interest rates, maturity period, and tax benefits under Section 80C.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>SSY Calculator</h1>
+    <p>Secure your daughter's future. High interest, zero risk, full tax saving.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Yearly Investment</span>
+            <div class="input-val" id="display-amt">₹1,50,000</div>
+          </div>
+          <input type="range" id="amt-slider" min="1000" max="150000" step="1000" value="150000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Girl Child's Age</span>
+            <div class="input-val" id="display-age">5 Yr</div>
+          </div>
+          <input type="range" id="age-slider" min="0" max="10" step="1" value="5">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Interest Rate (Current)</span>
+            <div class="input-val" id="display-rate">8.2%</div>
+          </div>
+          <input type="range" id="rate-slider" min="7" max="10" step="0.1" value="8.2">
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="ssyChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Total Invested</span>
+            <span id="res-invested">₹22,50,000</span>
+          </div>
+          <div class="result-item">
+            <span>Total Interest</span>
+            <span id="res-interest" style="color:var(--accent-green);">₹47,34,500</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Maturity Value</span>
+            <span id="res-total" style="font-size:1.4rem; color:var(--accent-blue); font-weight:700;">₹69,84,500</span>
+          </div>
+          <div class="result-item" style="justify-content:center; margin-top:5px; font-size:0.9rem;">
+            <span>Maturity Year: <strong id="res-year" style="color:#e2e8f0;">2047</strong></span>
+          </div>
+        </div>
+        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;">Open Account at Post Office</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>What is Sukanya Samriddhi Yojana (SSY)?</h2>
+        <p>
+          Launched as part of the "Beti Bachao, Beti Padhao" campaign, SSY is a government-backed small savings scheme dedicated to the girl child. It currently offers one of the <strong>highest interest rates</strong> among all fixed-income schemes (higher than PPF and FDs).
+        </p>
+
+        <h3>Eligibility Criteria</h3>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Who can open:</strong> Parents or legal guardians of a girl child.</li>
+          <li><strong>Age Limit:</strong> The girl must be <strong>below 10 years</strong> of age at the time of account opening.</li>
+          <li><strong>Limit:</strong> Maximum 2 accounts per family (one for each daughter). Exception allowed for twins/triplets.</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>The 21-Year Maturity Rule Explained</h2>
+        <p>
+          This is the most confusing part of SSY.
+          <br><strong>Maturity is NOT when the child turns 21.</strong>
+          <br>Maturity happens <strong>21 years after opening the account</strong>.
+        </p>
+        <p>
+          However, you only need to deposit money for the first <strong>15 years</strong>. For the remaining 6 years (Year 16 to 21), you do not deposit anything, but your accumulated corpus continues to earn interest.
+        </p>
+        <div class="highlight-box">
+          <strong>Example:</strong>
+          <br>If you open an account when your daughter is 5 years old:
+          <br>• You deposit money until she is 20 (15 years).
+          <br>• The account matures when she is 26 (21 years from opening).
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Tax Benefits (EEE Status)</h2>
+        <p>
+          Like PPF, SSY falls under the "Exempt-Exempt-Exempt" category, making it a powerful wealth builder.
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Investment:</strong> Tax deduction under Section 80C (up to ₹1.5 Lakhs).</li>
+          <li><strong>Interest:</strong> Fully tax-free.</li>
+          <li><strong>Maturity:</strong> Fully tax-free.</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>Premature Withdrawal Rules</h2>
+        <p>
+          The money is locked in, but the government allows withdrawals for the girl's future needs:
+        </p>
+        <h3>1. For Higher Education</h3>
+        <p>
+          Once the girl turns <strong>18 years old</strong> or passes the 10th standard, you can withdraw up to <strong>50%</strong> of the balance for her higher education fees.
+        </p>
+        <h3>2. For Marriage</h3>
+        <p>
+          The account can be closed prematurely for the purpose of the girl's marriage, provided she has attained the age of <strong>18 years</strong>.
+        </p>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer</h4>
+          <p>
+            <strong>Interest Rate:</strong> The SSY interest rate is revised quarterly by the government. The calculator assumes a constant rate for the entire tenure.
+          </p>
+          <p>
+            <strong>Maturity:</strong> If the girl gets married before the 21-year maturity period (after turning 18), the account must be closed. No interest is payable after marriage.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    <div class="link-box">
+      <div class="link-box-title">Retirement Tools</div>
+      <ul class="link-list">
+        <li><a href="ssy-calculator.html" class="active">SSY Calculator</a></li>
+        <li><a href="nps-calculator.html">NPS Calculator</a></li>
+        <li><a href="../bank-accounts/ppf-calculator.html">PPF Calculator</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Retirement</h4>
+      <a href="ssy-calculator.html">SSY Calculator</a>
+      <a href="../bank-accounts/ppf-calculator.html">PPF Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/ssy.js"></script>
+
+</body>
+</html>

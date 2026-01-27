@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Loan EMI Calculator: Check Eligibility & Interest Rates | CalcTools</title>
+  
+  <meta name="description" content="Calculate your Personal Loan EMI instantly. Compare interest rates, understand processing fees, and learn how your CIBIL score affects your loan eligibility.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>Personal Loan Calculator</h1>
+    <p>Unsecured loans for urgent needs. Check your EMI before you apply.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-header">
+      <div class="calc-tab" data-type="home">Home Loan</div>
+      <div class="calc-tab" data-type="car">Car Loan</div>
+      <div class="calc-tab active" data-type="personal">Personal Loan</div>
+    </div>
+
+    <div class="calc-body">
+      <div class="calc-inputs">
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Loan Amount</span>
+            <div class="input-val" id="display-loan">₹5,00,000</div>
+          </div>
+          <input type="range" id="loan-slider" min="50000" max="2500000" step="10000" value="500000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Interest Rate (p.a)</span>
+            <div class="input-val" id="display-rate">11%</div>
+          </div>
+          <input type="range" id="rate-slider" min="9" max="24" step="0.25" value="11">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Loan Tenure</span>
+            <div class="input-val" id="display-years">3 Yr</div>
+          </div>
+          <input type="range" id="years-slider" min="1" max="5" step="1" value="3">
+        </div>
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="emiChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Monthly EMI</span>
+            <span id="res-emi" style="color:var(--accent-blue); font-weight:700; font-size:1.2rem;">₹16,369</span>
+          </div>
+          <div class="result-item">
+            <span>Principal Amount</span>
+            <span id="res-principal">₹5,00,000</span>
+          </div>
+          <div class="result-item">
+            <span>Total Interest</span>
+            <span id="res-interest" style="color:#f87171;">₹89,297</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Total Payable</span>
+            <span id="res-total" style="font-size:1.1rem; font-weight:700;">₹5,89,297</span>
+          </div>
+        </div>
+        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;">Compare Bank Rates</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>The Truth About Personal Loans</h2>
+        <p>
+          A Personal Loan is an <strong>unsecured loan</strong>, meaning you don't need to pledge any collateral (like gold or property) to get it. Because the bank takes a higher risk, the interest rates are significantly higher than Home or Car loans.
+        </p>
+        <p>
+          <strong>When to take one:</strong> Medical emergencies, debt consolidation (paying off high-interest credit cards), or urgent home repairs.
+          <br><strong>When to avoid:</strong> Vacations, weddings, or buying luxury gadgets. Using a 14% loan for depreciating assets is a financial disaster.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>Your CIBIL Score is Everything</h2>
+        <p>
+          Since there is no collateral, banks rely 100% on your Credit Score to decide your interest rate.
+        </p>
+        <div style="overflow-x:auto; margin: 20px 0;">
+          <table style="width:100%; border-collapse: collapse; text-align: left; color: #d1d5db;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color);">
+                <th style="padding: 15px;">CIBIL Score</th>
+                <th style="padding: 15px;">Likely Interest Rate</th>
+                <th style="padding: 15px;">Approval Chance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>750+ (Excellent)</strong></td>
+                <td style="padding: 15px;">10.5% - 12%</td>
+                <td style="padding: 15px; color:var(--accent-green);">Very High</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>700 - 749 (Good)</strong></td>
+                <td style="padding: 15px;">12% - 15%</td>
+                <td style="padding: 15px;">High</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Below 650 (Poor)</strong></td>
+                <td style="padding: 15px;">18% - 24%</td>
+                <td style="padding: 15px; color:#f87171;">Low (Check NBFCs)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Beware of Hidden Charges</h2>
+        <p>
+          The interest rate is not the only cost. Personal loans are notorious for hidden fees that agents often don't mention.
+        </p>
+        
+        <h3>1. Processing Fee</h3>
+        <p>
+          Banks charge <strong>1% to 3%</strong> of the loan amount as a processing fee. This is deducted from the disbursed amount.
+          <br><em>Example:</em> If you take a ₹5 Lakh loan with a 2% fee, you will only receive ₹4.90 Lakhs in your account, but you will pay interest on the full ₹5 Lakhs.
+        </p>
+
+        <h3>2. Pre-closure / Foreclosure Charges</h3>
+        <p>
+          Unlike Home Loans (which have zero penalty for floating rates), Personal Loans have a <strong>Lock-in Period</strong> (usually 6-12 months). If you try to repay the loan early to save interest, banks charge a penalty of <strong>4% to 5%</strong> on the outstanding principal.
+        </p>
+        <p>
+          <em>Tip: Always negotiate for a "Zero Pre-closure Charge" clause if you expect a bonus or salary hike soon.</em>
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>Personal Loan vs. Credit Card Loan</h2>
+        <p>
+          Many people confuse the two. Here is why a Personal Loan is usually better for large amounts.
+        </p>
+        
+        
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Interest Rate:</strong> Personal Loans are 11-16%. Credit Card EMIs are often 36-42% annually.</li>
+          <li><strong>Tenure:</strong> Personal Loans allow up to 5 years. Credit cards usually max out at 24 months.</li>
+          <li><strong>Impact on Score:</strong> Maxing out your credit card limit hurts your CIBIL score (High Utilization). Taking a personal loan adds "Term Loan" mix, which can actually improve your score if paid on time.</li>
+        </ul>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer & Risk Warning</h4>
+          <p>
+            <strong>Not Financial Advice:</strong> This tool is for estimation only. Final interest rates depend on your employer category (CAT A/B/C), income stability, and credit history.
+          </p>
+          <p>
+            <strong>Approval:</strong> Application approval is at the sole discretion of the lender. CalcTools does not issue loans.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    
+    <div class="link-box">
+      <div class="link-box-title">Loan Calculators</div>
+      <ul class="link-list">
+        <li><a href="home-loan-calculator.html">Home Loan EMI</a></li>
+        <li><a href="car-loan-calculator.html">Car Loan EMI</a></li>
+        <li><a href="personal-loan-calculator.html" class="active">Personal Loan EMI</a></li> </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Investment Tools</div>
+      <ul class="link-list">
+        <li><a href="../mutual-fund/sip-calculator.html">SIP Calculator</a></li>
+        <li><a href="../mutual-fund/lumpsum-calculator.html">Lumpsum Calculator</a></li>
+        <li><a href="../mutual-fund/swp-calculator.html">SWP Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Banking & Tax</div>
+      <ul class="link-list">
+        <li><a href="../bank-accounts/fd-calculator.html">FD Calculator</a></li>
+        <li><a href="../bank-accounts/ppf-calculator.html">PPF Calculator</a></li>
+        <li><a href="../taxes/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="../taxes/income-tax-calculator.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+
+   
+
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="../mutual-fund/sip-calculator.html">SIP Calculator</a>
+      <a href="home-loan-calculator.html">Home Loan EMI</a>
+      <a href="personal-loan-calculator.html">Personal Loan EMI</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/emi.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Programmatically click the "Personal Loan" tab
+    const personalTab = document.querySelector('.calc-tab[data-type="personal"]');
+    if(personalTab) personalTab.click();
+  });
+</script>
+
+</body>
+</html>

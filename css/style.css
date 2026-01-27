@@ -1,0 +1,609 @@
+/* ==================================================================
+   CALCTOOLS MASTER STYLESHEET (GROWW REPLICA THEME)
+   ================================================================== */
+
+/* --- 1. RESET & BASE --- */
+:root {
+  --bg-dark: #0b1220;       /* Deep Navy Background */
+  --bg-card: #0f172a;       /* Lighter Card Background */
+  --text-primary: #e5e7eb;  /* Soft White */
+  --text-secondary: #9ca3af;/* Muted Grey */
+  --accent-blue: #38bdf8;   /* Bright Blue (Primary) */
+  --accent-green: #22c55e;  /* Success Green */
+  --border-color: #1f2937;  /* Subtle Border */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; transition: color 0.2s ease; }
+ul { list-style: none; }
+
+/* --- 2. LAYOUT UTILITIES --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-spacer { padding: 80px 0; }
+.text-center { text-align: center; }
+
+/* --- 3. HEADER & NAVIGATION --- */
+.header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(to right, var(--accent-blue), #818cf8);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.nav { display: flex; gap: 30px; }
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.nav-link:hover { color: var(--accent-blue); }
+
+/* --- 4. HERO SECTION --- */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  background: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--bg-dark) 70%);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive Text */
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.hero-btn {
+  background: var(--accent-blue);
+  color: #0b1220;
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+}
+
+/* --- 5. CATEGORY GRID (Groww Style) --- */
+.category-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border-left: 5px solid var(--accent-blue);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.tool-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.tool-card h3 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.tool-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- 6. LONG FORM CONTENT (Wiki Style) --- */
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.article-block {
+  margin-bottom: 60px;
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.article-block h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 25px;
+}
+
+.article-block h3 {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  margin: 30px 0 15px;
+}
+
+.article-block p {
+  margin-bottom: 18px;
+  color: #d1d5db;
+  font-size: 1.05rem;
+}
+
+.highlight-box {
+  background: rgba(56, 189, 248, 0.1);
+  border-left: 4px solid var(--accent-blue);
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* --- 7. FOOTER --- */
+.footer {
+  background: #020617;
+  padding: 60px 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.footer-col a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.footer-col a:hover { color: var(--accent-blue); }
+
+/* --- 8. RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero { padding: 80px 20px 60px; }
+  .hero h1 { font-size: 2.2rem; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; gap: 15px; }
+  .article-block { padding: 25px; }
+}
+/* =========================================
+   SLIDER & INPUT STYLING (MATCHING IMAGE)
+   ========================================= */
+
+/* Container for Label + Slider */
+.input-group {
+  margin-bottom: 30px;
+}
+
+/* The Top Row: Label (Left) and Value (Right/Below) */
+.input-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px; /* Space between text and slider */
+}
+
+/* "Monthly Investment" Text */
+.input-label {
+  color: #e2e8f0; /* Soft White */
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* "₹5,000" Value Text */
+.input-val {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* --- THE RANGE SLIDER BAR --- */
+input[type=range] {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none; 
+  width: 100%;
+  height: 6px; /* Thickness of the bar */
+  
+  /* The "Empty" Track Color (White/Grey) */
+  background: #e2e8f0; 
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  
+  /* THE MAGIC: Blue Fill Gradient (Updated by JS) */
+  background-image: linear-gradient(#38bdf8, #38bdf8);
+  background-size: 50% 100%; /* Default width (JS will change this) */
+  background-repeat: no-repeat;
+}
+
+/* The Circle Handle (Thumb) - Chrome/Safari */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 22px; /* Size of the dot */
+  width: 22px;
+  border-radius: 50%;
+  background: #38bdf8; /* Blue Color */
+  cursor: pointer;
+  margin-top: -8px; /* Centers the dot on the line */
+  
+  /* Optional: Adds a dark border around the dot like the image */
+  border: 3px solid #0b1220; 
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4); /* Glowing effect */
+  transition: transform 0.1s ease;
+}
+
+/* The Circle Handle (Thumb) - Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #38bdf8;
+  cursor: pointer;
+  border: 3px solid #0b1220;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Hover Effect */
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.1); /* Slightly grows on hover */
+}
+/* =========================================
+   DISCLAIMER BLOCK STYLING
+   ========================================= */
+
+.disclaimer-box {
+  background: #131d30; /* Slightly lighter than main background */
+  border: 1px solid #1f2937;
+  border-left: 4px solid #f59e0b; /* Amber/Orange Warning Color */
+  border-radius: 8px;
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.disclaimer-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.disclaimer-content h4 {
+  color: #f59e0b; /* Matches the border color */
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.disclaimer-content p {
+  color: #9ca3af; /* Muted text */
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.disclaimer-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .disclaimer-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .disclaimer-icon {
+    font-size: 1.5rem;
+  }
+}
+/* =========================================
+   BLOG & KNOWLEDGE HUB STYLES
+   ========================================= */
+
+/* --- Blog Grid System --- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* --- Blog Card Design --- */
+.blog-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Placeholder Thumbnail (Gradient) */
+.blog-thumb {
+  height: 180px;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  border-bottom: 1px solid #334155;
+}
+
+.blog-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category Tag */
+.blog-cat {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  width: fit-content;
+}
+
+/* Card Typography */
+.blog-title {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.blog-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blog-title a:hover {
+  color: #38bdf8;
+}
+
+.blog-excerpt {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.read-more-link {
+  color: #38bdf8;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto; /* Pushes to bottom */
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Article Detail Page Styles (Typography) --- */
+.article-container {
+  max-width: 800px; /* Optimal reading width */
+  margin: 0 auto;
+}
+
+.article-header {
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid #334155;
+  background: #0f172a;
+}
+
+.article-meta {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.article-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+  padding: 40px 20px;
+}
+
+.article-body h2 { color: #fff; margin-top: 40px; margin-bottom: 20px; font-size: 1.8rem; }
+.article-body h3 { color: #e2e8f0; margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem; }
+.article-body p { margin-bottom: 20px; }
+.article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 20px; color: #cbd5e1; }
+.article-body li { margin-bottom: 10px; }
+
+/* Table of Contents Box */
+.toc-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  display: inline-block;
+  min-width: 300px;
+}
+.toc-box h4 { color: #38bdf8; margin-bottom: 10px; }
+.toc-box ul { list-style: none; padding: 0; margin: 0; }
+.toc-box li a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; display: block; padding: 5px 0; border-bottom: 1px solid #334155; }
+.toc-box li a:hover { color: #fff; padding-left: 5px; transition: 0.2s; }
+/* =========================================
+   SIDEBAR & TOOL GRID LAYOUT
+   ========================================= */
+
+/* The Parent Wrapper: Holds Content (Left) and Sidebar (Right) */
+.page-with-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 320px; /* Content takes space, Sidebar is fixed 320px */
+  gap: 40px;
+  align-items: start; /* Vital for sticky to work */
+  margin-top: 40px;
+}
+
+/* The Sticky Sidebar Container */
+.tool-sidebar {
+  position: -webkit-sticky; /* Safari support */
+  position: sticky;
+  top: 100px; /* Distance from top of screen when scrolling */
+  z-index: 10;
+}
+
+/* The "Link Box" Styling (Matches your screenshot) */
+.link-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.link-box-title {
+  background: #0f172a;
+  padding: 15px 20px;
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 1px solid #334155;
+  font-size: 1rem;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-list li {
+  border-bottom: 1px solid #334155;
+}
+
+.link-list li:last-child {
+  border-bottom: none;
+}
+
+.link-list a {
+  display: block;
+  padding: 12px 20px;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+/* Hover Effect */
+.link-list a:hover {
+  background: #334155;
+  color: #fff;
+  padding-left: 25px; /* Slight movement effect */
+}
+
+/* Active Page State (Highlight) */
+.link-list a.active {
+  background: rgba(56, 189, 248, 0.1); /* Light Blue Tint */
+  color: #38bdf8;
+  border-left: 3px solid #38bdf8;
+  font-weight: 600;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+  .page-with-sidebar {
+    grid-template-columns: 1fr; /* Stack vertically on tablets/mobiles */
+  }
+  
+  .tool-sidebar {
+    position: static; /* No sticky on mobile */
+    order: 2; /* Puts links BELOW content on mobile (Optional: change to -1 for top) */
+  }
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FD Calculator: Fixed Deposit Interest & Maturity Calculator | CalcTools</title>
+  
+  <meta name="description" content="Calculate FD maturity amount for all banks (SBI, HDFC, ICICI). Learn about TDS deduction, Form 15G/15H, and Senior Citizen interest rates.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>Fixed Deposit Calculator</h1>
+    <p>Safe. Secure. Predictable. Calculate your Bank FD returns.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Total Investment</span>
+            <div class="input-val" id="display-amt">₹1,00,000</div>
+          </div>
+          <input type="range" id="amt-slider" min="5000" max="5000000" step="5000" value="100000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Interest Rate (p.a)</span>
+            <div class="input-val" id="display-rate">6.5%</div>
+          </div>
+          <input type="range" id="rate-slider" min="3" max="10" step="0.1" value="6.5">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Time Period</span>
+            <div class="input-val" id="display-years">5 Yr</div>
+          </div>
+          <input type="range" id="years-slider" min="1" max="10" step="1" value="5">
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="fdChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Invested Amount</span>
+            <span id="res-invested">₹1,00,000</span>
+          </div>
+          <div class="result-item">
+            <span>Total Returns</span>
+            <span id="res-interest" style="color:var(--accent-green);">₹38,042</span>
+          </div>
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Maturity Value</span>
+            <span id="res-total" style="font-size:1.4rem; color:var(--accent-blue); font-weight:700;">₹1,38,042</span>
+          </div>
+        </div>
+        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;">Compare Bank Rates</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>Fixed Deposits: The Safety Net of Indian Families</h2>
+        <p>
+          Despite the rise of Mutual Funds and Stocks, the Fixed Deposit (FD) remains the most trusted financial instrument in India. It offers capital protection and guaranteed returns, making it ideal for your emergency fund or short-term goals.
+        </p>
+
+        <h3>1. Cumulative vs. Non-Cumulative FD</h3>
+        <p>
+          When opening an FD, the bank asks you to choose between two options. Choosing the wrong one can mess up your cash flow.
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Cumulative FD (Reinvestment):</strong> The interest earned is re-invested back into the FD. You get the principal + total interest at maturity. Best for wealth creation.</li>
+          <li><strong>Non-Cumulative FD (Payout):</strong> The interest is paid out to your bank account monthly, quarterly, or yearly. Best for retirees who need a regular income source.</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>Taxation on FD: The TDS Trap</h2>
+        <p>
+          Unlike PPF, FD interest is <strong>fully taxable</strong> according to your Income Tax Slab.
+        </p>
+        <p>
+          <strong>TDS Deduction:</strong> If your interest income from all FDs in a bank exceeds ₹40,000 (₹50,000 for Senior Citizens) in a year, the bank deducts 10% TDS.
+        </p>
+        <div class="highlight-box">
+          <strong>How to Avoid TDS (Form 15G/15H):</strong>
+          <br>If your total annual income is below the taxable limit (₹2.5L or ₹3L), you can submit <strong>Form 15G</strong> (for age &lt;60) or <strong>Form 15H</strong> (for Seniors) to the bank. This tells the bank NOT to deduct TDS.
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Senior Citizen Benefits</h2>
+        <p>
+          Banks love senior citizens. They typically offer an <strong>additional 0.50% interest</strong> over the standard rates.
+        </p>
+        <p>
+          Some banks (like SBI Wecare or HDFC Senior Citizen Care) offer a "Premium" of 0.80% extra for tenures above 5 years. This makes FDs a critical component of retirement planning.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>Premature Withdrawal Penalty</h2>
+        <p>
+          FDs are "Fixed" for a reason. If you break the FD before the maturity date, banks usually charge a penalty of <strong>0.5% to 1%</strong>.
+        </p>
+        <p>
+          <strong>Alternative: Overdraft against FD</strong>
+          <br>Instead of breaking the FD, you can take a loan against it. Banks offer up to 90% of the FD value as an overdraft. The interest charged is usually just 1-2% higher than your FD rate.
+        </p>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer</h4>
+          <p>
+            <strong>Inflation Risk:</strong> FDs offer safety but often fail to beat high inflation. Post-tax returns from FDs can sometimes be negative in real terms.
+          </p>
+          <p>
+            <strong>Insurance:</strong> Bank deposits are insured up to ₹5 Lakhs by the DICGC (RBI subsidiary). Amounts above ₹5 Lakhs in a single bank carry default risk.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    
+    <div class="link-box">
+      <div class="link-box-title">Mutual Fund Tools</div>
+      <ul class="link-list">
+        <li><a href="../mutual-fund/sip-calculator.html">SIP Calculator</a></li>
+        <li><a href="../mutual-fund/lumpsum-calculator.html">Lumpsum Calculator</a></li>
+        <li><a href="../mutual-fund/swp-calculator.html">SWP Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Banking & Post Office</div>
+      <ul class="link-list">
+        <li><a href="fd-calculator.html" class="active">FD Calculator</a></li> <li><a href="rd-calculator.html">RD Calculator</a></li>
+        <li><a href="ppf-calculator.html">PPF Calculator</a></li>
+        <li><a href="../retirement/ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Loans & Tax</div>
+      <ul class="link-list">
+        <li><a href="../loans/home-loan-calculator.html">Home Loan EMI</a></li>
+        <li><a href="../taxes/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="../taxes/income-tax-calculator.html">Income Tax Calculator</a></li>
+      </ul>
+    </div>
+
+  
+
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="ppf-calculator.html">PPF Calculator</a>
+      <a href="fd-calculator.html">FD Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/fd.js"></script>
+
+</body>
+</html>

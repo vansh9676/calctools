@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Global Income Tax Calculator 2026: India, USA, UK Tax Estimator & Guide | CalcTools</title>
+  
+  <meta name="description" content="Advanced Income Tax Calculator for India (FY 2025-26), USA (Federal 2024), and UK (2024-25). Compare tax regimes, calculate refunds, and learn legal tax-saving strategies.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* Specific styles for Country Selector & Content */
+    .country-selector {
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid #334155;
+      padding: 12px;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .country-selector:focus {
+      outline: none;
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .hidden-section {
+      display: none;
+    }
+    .tax-rule-box {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+    }
+    .tax-rule-box h3 {
+        color: #38bdf8;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #1e293b;
+        padding-bottom: 10px;
+    }
+    .tax-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        font-size: 0.95rem;
+    }
+    .tax-table th {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 2px solid #334155;
+        color: #9ca3af;
+        font-weight: 600;
+    }
+    .tax-table td {
+        padding: 12px;
+        border-bottom: 1px solid #1e293b;
+        color: #e2e8f0;
+    }
+    .faq-item {
+        margin-bottom: 20px;
+    }
+    .faq-question {
+        color: #e2e8f0;
+        font-weight: 600;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .faq-answer {
+        color: #9ca3af;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>Global Income Tax Calculator</h1>
+    <p>Comprehensive tax estimation for India, USA, and UK. Updated for the latest fiscal year.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div class="input-group">
+          <label class="input-label" style="display:block; margin-bottom:8px; color:#9ca3af;">Select Your Tax Residency</label>
+          <select id="country-select" class="country-selector">
+            <option value="india" selected>🇮🇳 India (FY 2025-26)</option>
+            <option value="usa">🇺🇸 USA (Federal 2024)</option>
+            <option value="uk">🇬🇧 United Kingdom (2024-25)</option>
+          </select>
+        </div>
+        
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label" id="label-income">Gross Annual Salary</span>
+            <div class="input-val" id="display-income">₹12,00,000</div>
+          </div>
+          <input type="range" id="income-slider" min="0" max="10000000" step="50000" value="1200000">
+        </div>
+
+        <div id="inputs-india">
+          <h4 style="color:#38bdf8; margin-bottom:15px; margin-top:30px; font-size:1rem;">Deductions (Applicable to Old Regime)</h4>
+
+          <div class="input-group">
+            <div class="input-top">
+              <span class="input-label">Section 80C (PPF, ELSS, LIC)</span>
+              <div class="input-val" id="display-80c">₹1,50,000</div>
+            </div>
+            <input type="range" id="80c-slider" min="0" max="150000" step="5000" value="150000">
+          </div>
+
+          <div class="input-group">
+            <div class="input-top">
+              <span class="input-label">Section 80D (Health Insurance)</span>
+              <div class="input-val" id="display-80d">₹25,000</div>
+            </div>
+            <input type="range" id="80d-slider" min="0" max="50000" step="5000" value="25000">
+          </div>
+
+          <div class="input-group">
+            <div class="input-top">
+              <span class="input-label">HRA / Home Loan Interest</span>
+              <div class="input-val" id="display-hra">₹0</div>
+            </div>
+            <input type="range" id="hra-slider" min="0" max="500000" step="10000" value="0">
+          </div>
+        </div>
+
+        <div id="inputs-usa" class="hidden-section">
+          <div class="input-group">
+            <div class="input-top">
+              <span class="input-label">Standard Deduction (Single Filer)</span>
+              <div class="input-val" id="display-std-usa">$14,600</div>
+            </div>
+             <p style="font-size:0.8rem; color:#6b7280; margin-top:5px;">*Fixed for 2024 Tax Year (Single Filer)</p>
+          </div>
+        </div>
+
+        <div id="inputs-uk" class="hidden-section">
+          <div class="input-group">
+            <div class="input-top">
+              <span class="input-label">Personal Allowance</span>
+              <div class="input-val" id="display-allowance-uk">£12,570</div>
+            </div>
+            <p style="font-size:0.8rem; color:#6b7280; margin-top:5px;">*Tax-free allowance (decreases if income > £100k)</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="taxChart"></canvas>
+        </div>
+
+        <div id="results-india" class="result-box" style="width: 100%; text-align:left;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid #1f2937;">
+            <span>Old Regime Tax:</span>
+            <span id="res-old" style="font-weight:700;">₹1,17,000</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid #1f2937;">
+            <span>New Regime Tax:</span>
+            <span id="res-new" style="font-weight:700;">₹82,500</span>
+          </div>
+          <div style="background:#1e293b; padding:15px; border-radius:8px; border:1px solid #334155; text-align:center;">
+             <span style="color:#9ca3af; font-size:0.9rem;">Comparison Verdict:</span><br>
+             <strong id="res-verdict" style="color:#22c55e; font-size:1.1rem;">Choose New Regime</strong>
+          </div>
+        </div>
+
+        <div id="results-global" class="result-box hidden-section" style="width: 100%; text-align:left;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid #1f2937;">
+            <span>Taxable Income:</span>
+            <span id="res-global-taxable" style="font-weight:700;">-</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid #1f2937;">
+            <span>Estimated Tax:</span>
+            <span id="res-global-tax" style="color:#f87171; font-weight:700;">-</span>
+          </div>
+          <div style="display:flex; justify-content:space-between;">
+            <span>Effective Tax Rate:</span>
+            <span id="res-global-rate" style="color:#38bdf8;">-</span>
+          </div>
+        </div>
+        
+        <a id="gov-link" href="https://eportal.incometax.gov.in/" target="_blank" class="hero-btn" style="width:100%; margin-top:20px; text-align:center; display:block; background:#1e293b; border:1px solid #38bdf8; color:#38bdf8;">
+          Official Tax Portal ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <section id="content-india" style="width: 100%;">
+        <article class="article-block">
+          <h2>🇮🇳 India Income Tax Guide (FY 2025-26)</h2>
+          <p>
+            The Indian Income Tax system is governed by the Income Tax Act, 1961. Currently, taxpayers are at a crossroads between two distinct tax regimes. Making the right choice can save you lakhs in taxes.
+          </p>
+
+          <div class="tax-rule-box">
+            <h3>1. Old vs. New Regime: The Core Differences</h3>
+            <table class="tax-table">
+              <tr>
+                <th>Feature</th>
+                <th>New Regime (Default)</th>
+                <th>Old Regime</th>
+              </tr>
+              <tr>
+                <td><strong>Tax Rates</strong></td>
+                <td style="color:#22c55e;">Lower Slab Rates</td>
+                <td>Higher Slab Rates</td>
+              </tr>
+              <tr>
+                <td><strong>Exemptions</strong></td>
+                <td style="color:#f87171;">Disallowed (No 80C, HRA)</td>
+                <td style="color:#22c55e;">Allowed (80C, 80D, HRA)</td>
+              </tr>
+              <tr>
+                <td><strong>Standard Deduction</strong></td>
+                <td>Allowed (₹75,000)</td>
+                <td>Allowed (₹75,000)</td>
+              </tr>
+              <tr>
+                <td><strong>Complexity</strong></td>
+                <td>Simple (No proofs needed)</td>
+                <td>Complex (Documentation required)</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>2. The "Hidden" Surcharge for High Earners</h3>
+            <p>If your income exceeds ₹50 Lakhs, the government levies a "Surcharge" on top of the income tax. This is often overlooked by calculators but is crucial for HNIs.</p>
+            <ul style="margin-left: 20px; color:#d1d5db; list-style:disc;">
+              <li><strong>₹50L - ₹1 Cr:</strong> 10% Surcharge</li>
+              <li><strong>₹1 Cr - ₹2 Cr:</strong> 15% Surcharge</li>
+              <li><strong>Above ₹2 Cr:</strong> 25% (Old Regime) / 25% (New Regime capped)</li>
+            </ul>
+            <p><em>Additionally, a 4% Health & Education Cess is levied on the total tax + surcharge amount for everyone.</em></p>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>3. Strategic Tax Planning (Beyond 80C)</h3>
+            <p>Most people stop at the ₹1.5 Lakh limit of Section 80C. Here is how to save more:</p>
+            <ul style="margin-left: 20px; color:#d1d5db; list-style:disc;">
+              <li><strong>NPS (Sec 80CCD(1B)):</strong> An exclusive additional deduction of <strong>₹50,000</strong> over and above 80C.</li>
+              <li><strong>Health Insurance (Sec 80D):</strong> Up to ₹25,000 for self and ₹50,000 for senior citizen parents.</li>
+              <li><strong>Home Loan Interest (Sec 24b):</strong> Up to ₹2 Lakhs deduction for a self-occupied property.</li>
+              <li><strong>Donations (Sec 80G):</strong> 50% or 100% deduction for donations to approved funds (e.g., PM CARES).</li>
+            </ul>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>Frequently Asked Questions (India)</h3>
+            <div class="faq-item">
+              <span class="faq-question">Q: Is the New Regime mandatory?</span>
+              <span class="faq-answer">No. While it is the "default" option when you open the portal, you can manually switch to the Old Regime while filing your ITR. However, business owners can switch only once in a lifetime.</span>
+            </div>
+            <div class="faq-item">
+              <span class="faq-question">Q: Can I claim HRA if I live with my parents?</span>
+              <span class="faq-answer">Yes, provided you actually pay them rent via bank transfer and they declare it as rental income in their tax returns.</span>
+            </div>
+            <div class="faq-item">
+              <span class="faq-question">Q: What happens if I miss the ITR deadline (July 31)?</span>
+              <span class="faq-answer">You can file a Belated Return until December 31st, but you will have to pay a late fee of ₹5,000 (₹1,000 if income is below ₹5L).</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="content-usa" class="hidden-section">
+        <article class="article-block">
+          <h2>🇺🇸 USA Federal Income Tax Guide (2024)</h2>
+          <p>
+            The US tax code is one of the most complex in the world. It involves Federal, State, and sometimes Local taxes. This calculator estimates your <strong>Federal Tax Liability</strong>.
+          </p>
+
+          <div class="tax-rule-box">
+            <h3>1. Deductions: Standard vs. Itemized</h3>
+            <p>The IRS allows you to lower your taxable income by choosing one of two paths:</p>
+            <table class="tax-table">
+              <tr>
+                <th>Deduction Type</th>
+                <th>Amount (2024)</th>
+                <th>Who should choose?</th>
+              </tr>
+              <tr>
+                <td><strong>Standard</strong></td>
+                <td>$14,600 (Single)<br>$29,200 (Joint)</td>
+                <td>90% of taxpayers (Simple, no receipt tracking).</td>
+              </tr>
+              <tr>
+                <td><strong>Itemized</strong></td>
+                <td>Variable</td>
+                <td>If your mortgage interest, state taxes (SALT), and charity donations exceed the Standard limit.</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>2. Tax Credits vs. Tax Deductions</h3>
+            <p>Knowing the difference is key to lowering your bill:</p>
+            <ul style="margin-left: 20px; color:#d1d5db; list-style:disc;">
+              <li><strong>Tax Deduction:</strong> Lowers your <em>taxable income</em>. (e.g., 401(k) contributions). If you are in the 22% bracket, a $1,000 deduction saves you $220.</li>
+              <li><strong>Tax Credit:</strong> Lowers your <em>tax bill</em> directly dollar-for-dollar. (e.g., Child Tax Credit). A $1,000 credit saves you exactly $1,000.</li>
+            </ul>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>3. Don't Forget State Taxes</h3>
+            <p>
+              Your total tax burden depends heavily on where you live.
+              <br><strong>Zero Income Tax States:</strong> Alaska, Florida, Nevada, South Dakota, Tennessee, Texas, Washington, Wyoming.
+              <br><strong>High Tax States:</strong> California (up to 13.3%), New York, New Jersey.
+            </p>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>Frequently Asked Questions (USA)</h3>
+            <div class="faq-item">
+              <span class="faq-question">Q: When is the tax filing deadline?</span>
+              <span class="faq-answer">Traditionally <strong>April 15th</strong> ("Tax Day"). If it falls on a weekend, it moves to the next business day. Extensions can be requested until October 15th.</span>
+            </div>
+            <div class="faq-item">
+              <span class="faq-question">Q: Are 401(k) contributions taxable?</span>
+              <span class="faq-answer">Traditional 401(k) contributions are tax-deferred (you don't pay tax now, but pay when you withdraw in retirement). Roth 401(k) contributions are taxed now, but tax-free in retirement.</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="content-uk" class="hidden-section">
+        <article class="article-block">
+          <h2>🇬🇧 UK Income Tax Guide (2024-25)</h2>
+          <p>
+            The UK tax year runs from <strong>April 6th to April 5th</strong>. Unlike the US, most employees have their tax deducted automatically via PAYE (Pay As You Earn).
+          </p>
+
+          <div class="tax-rule-box">
+            <h3>1. The "60% Tax Trap"</h3>
+            <p>
+              Officially, the highest tax rate is 45%. However, there is a hidden effective tax rate of <strong>60%</strong> for incomes between £100,000 and £125,140.
+            </p>
+            <p>
+              <strong>Why?</strong> For every £2 you earn above £100k, you lose £1 of your Personal Allowance (tax-free limit).
+              <br><em>Result: You pay 40% tax on the income AND lose 40% tax relief on the allowance lost. Total effective hit = 60%.</em>
+            </p>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>2. National Insurance (NI) Explained</h3>
+            <p>NI is essentially a second income tax. It funds the State Pension and NHS.</p>
+            <ul style="margin-left: 20px; color:#d1d5db; list-style:disc;">
+              <li><strong>Class 1 NI:</strong> Employees pay 8% on earnings between £12,570 and £50,270.</li>
+              <li><strong>Reduced Rate:</strong> Only 2% on earnings above £50,270.</li>
+            </ul>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>3. Tax Efficient Investing (ISA & SIPP)</h3>
+            <p>The UK offers generous tax shelters:</p>
+            <ul style="margin-left: 20px; color:#d1d5db; list-style:disc;">
+              <li><strong>ISA (Individual Savings Account):</strong> Invest up to £20,000/year. All capital gains and dividends are permanently tax-free.</li>
+              <li><strong>SIPP (Self-Invested Personal Pension):</strong> You get tax relief on contributions (Govt adds 20-45% top-up), but money is locked until age 55/57.</li>
+            </ul>
+          </div>
+
+          <div class="tax-rule-box">
+            <h3>Frequently Asked Questions (UK)</h3>
+            <div class="faq-item">
+              <span class="faq-question">Q: Do I need to file a Self Assessment return?</span>
+              <span class="faq-answer">Most employees don't. You only need to file if you are self-employed, earn over £100k, or have untaxed income (rent, dividends) over £2,500.</span>
+            </div>
+            <div class="faq-item">
+              <span class="faq-question">Q: Is tax different in Scotland?</span>
+              <span class="faq-answer">Yes. Scotland sets its own income tax bands (Starter, Basic, Intermediate, Higher, Top). They are generally slightly higher than the rest of the UK for middle/high earners.</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Global Disclaimer</h4>
+          <p>
+            <strong>Estimation Only:</strong> Tax laws are complex and subject to individual circumstances (e.g., disabilities, capital gains, state/council taxes). This calculator provides an indicative estimate only.
+          </p>
+          <p>
+            <strong>Verification:</strong> 
+            Always verify your final tax liability with a certified professional in your jurisdiction (CA in India, CPA in USA, Tax Advisor in UK).
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    <div class="link-box">
+      <div class="link-box-title">Tax Calculators</div>
+      <ul class="link-list">
+        <li><a href="income-tax-calculator.html" class="active">Income Tax Calculator</a></li>
+        <li><a href="gst-calculator.html">GST Calculator</a></li>
+        <li><a href="hra-calculator.html">HRA Calculator</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">Global financial planning tools.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Taxes</h4>
+      <a href="income-tax-calculator.html">Income Tax</a>
+      <a href="gst-calculator.html">GST Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/income-tax.js"></script>
+
+</body>
+</html>

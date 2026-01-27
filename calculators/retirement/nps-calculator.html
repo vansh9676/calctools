@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NPS (National Pension Scheme): National Pension Scheme Interest & Pension | CalcTools</title>
+  
+  <meta name="description" content="Calculate your NPS pension and lump sum amount. Understand Tier 1 vs Tier 2, exclusive ₹50,000 tax benefit (80CCD), and PFRDA withdrawal rules.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>NPS (National Pension Scheme)</h1>
+    <p>Plan your retirement with India's most efficient pension scheme. Calculate your monthly pension.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label" id="amt-label">Monthly Investment</span>
+            <div class="input-val" id="display-amt">₹5,000</div>
+          </div>
+          <input type="range" id="amt-slider" min="500" max="150000" step="500" value="5000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Your Age</span>
+            <div class="input-val" id="display-age">25 Yr</div>
+          </div>
+          <input type="range" id="age-slider" min="18" max="60" step="1" value="25">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Expected Return (ROI)</span>
+            <div class="input-val" id="display-rate">10%</div>
+          </div>
+          <input type="range" id="rate-slider" min="8" max="15" step="0.5" value="10">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Annuity Re-investment (%)</span>
+            <div class="input-val" id="display-annuity">40%</div>
+          </div>
+          <input type="range" id="annuity-slider" min="40" max="100" step="5" value="40">
+          <p style="font-size:0.8rem; color:#6b7280; margin-top:5px;">(Min. 40% is mandatory by Govt rules)</p>
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="npsChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Total Invested</span>
+            <span id="res-invested">₹21,00,000</span>
+          </div>
+          <div class="result-item">
+            <span>Total Corpus (Age 60)</span>
+            <span id="res-corpus" style="color:var(--accent-blue); font-weight:700;">₹1.91 Cr</span>
+          </div>
+          
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:15px; padding-top:10px;">
+            <span>Lump Sum Withdrawal</span>
+            <span id="res-lumpsum" style="color:var(--accent-green);">₹1.15 Cr</span>
+          </div>
+          <div class="result-item">
+            <span>Est. Monthly Pension</span>
+            <span id="res-pension" style="font-size:1.3rem; color:#f59e0b; font-weight:700;">₹38,300</span>
+          </div>
+        </div>
+        
+        <a href="https://enps.nsdl.com/eNPS/NationalPensionSystem.html" target="_blank" class="hero-btn" style="width:100%; margin-top:20px; text-align:center; display:block; background:#1e293b; border:1px solid #38bdf8; color:#38bdf8;">
+          Open NPS Account (eNPS Portal) ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>What is the National Pension System (NPS)?</h2>
+        <p>
+          The NPS is a voluntary, defined-contribution retirement savings scheme designed to enable subscribers to make optimum decisions regarding their future through systematic savings during their working life. It is regulated by the <strong>PFRDA (Pension Fund Regulatory and Development Authority)</strong> under the Government of India.
+        </p>
+        <p>
+          Unlike the old pension scheme (OPS), NPS is market-linked. Your money is invested in a mix of <strong>Equity (E)</strong>, <strong>Corporate Bonds (C)</strong>, and <strong>Government Securities (G)</strong> based on your preference.
+        </p>
+
+        <h3>Tier I vs. Tier II Accounts</h3>
+        <div style="overflow-x:auto; margin: 20px 0;">
+          <table style="width:100%; border-collapse: collapse; text-align: left; color: #d1d5db;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color);">
+                <th style="padding: 15px;">Feature</th>
+                <th style="padding: 15px;">Tier I (Pension)</th>
+                <th style="padding: 15px;">Tier II (Investment)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Status</strong></td>
+                <td style="padding: 15px; color:var(--accent-green);">Mandatory for Govt Employees</td>
+                <td style="padding: 15px;">Voluntary Add-on</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Lock-in</strong></td>
+                <td style="padding: 15px;">Until Age 60</td>
+                <td style="padding: 15px; color:var(--accent-green);">No Lock-in (Withdraw anytime)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Tax Benefit</strong></td>
+                <td style="padding: 15px;">Available (80C + 80CCD)</td>
+                <td style="padding: 15px;">No Tax Benefit</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 15px;"><strong>Min Contribution</strong></td>
+                <td style="padding: 15px;">₹1,000 / year</td>
+                <td style="padding: 15px;">₹250 / contribution</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>The "Exclusive" ₹50,000 Tax Benefit</h2>
+        <p>
+          NPS is the only financial instrument in India that offers a tax deduction <strong>over and above</strong> the ₹1.5 Lakh limit of Section 80C.
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Section 80CCD(1):</strong> Deduction up to 10% of salary (Basic + DA) within the overall ₹1.5 Lakh 80C limit.</li>
+          <li><strong>Section 80CCD(1B):</strong> Additional deduction of <strong>₹50,000</strong>. This is exclusive to NPS.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>Impact:</strong> If you are in the 30% tax bracket, investing ₹50,000 in NPS saves you exactly <strong>₹15,600</strong> in taxes every year.
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Withdrawal Rules (Exit Strategy)</h2>
+        <p>
+          At the age of 60, your NPS account matures. The withdrawal rules are strict to ensure you have a monthly income.
+        </p>
+        <h3>The 60-40 Rule</h3>
+        <p>
+          You cannot withdraw the entire money.
+          <br>• <strong>Max 60%</strong> of the corpus can be withdrawn as a Lump Sum. This amount is <strong>100% Tax-Free</strong>.
+          <br>• <strong>Min 40%</strong> of the corpus MUST be used to purchase an "Annuity Plan" from an insurance provider (like LIC, HDFC Life).
+        </p>
+        <p>
+          <strong>Note:</strong> The monthly pension you receive from the annuity is taxable as per your income tax slab in retirement.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>Investment Choices: Active vs. Auto</h2>
+        <p>
+          NPS allows you to decide where your money goes.
+        </p>
+        <h3>1. Active Choice</h3>
+        <p>
+          You decide the allocation. You can put up to <strong>75% in Equity (E)</strong> up to age 50. The rest goes to Corporate Bonds (C) or Govt Securities (G).
+        </p>
+        <h3>2. Auto Choice (Life Cycle Fund)</h3>
+        <p>
+          The system automatically manages your risk based on your age.
+          <br>• <strong>Aggressive (LC75):</strong> Starts with 75% Equity, reduces as you age.
+          <br>• <strong>Moderate (LC50):</strong> Starts with 50% Equity. (Default option).
+          <br>• <strong>Conservative (LC25):</strong> Starts with 25% Equity.
+        </p>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer & Risk Warning</h4>
+          <p>
+            <strong>Market Linked:</strong> NPS returns are market-linked and depend on the performance of the Pension Fund Manager (PFM) you choose. Past performance (usually 9-10%) is not a guarantee of future returns.
+          </p>
+          <p>
+            <strong>Annuity Rates:</strong> The pension amount calculated above assumes an annuity rate of approx 6%. Actual annuity rates at the time of your retirement (20-30 years later) may vary significantly.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    <div class="link-box">
+      <div class="link-box-title">Retirement Tools</div>
+      <ul class="link-list">
+        <li><a href="nps-calculator.html" class="active">NPS Calculator</a></li>
+        <li><a href="epf-calculator.html">EPF Calculator</a></li>
+        <li><a href="gratuity-calculator.html">Gratuity Calculator</a></li>
+        <li><a href="ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Retirement</h4>
+      <a href="nps-calculator.html">NPS Calculator</a>
+      <a href="ssy-calculator.html">SSY Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/nps.js"></script>
+
+</body>
+</html>

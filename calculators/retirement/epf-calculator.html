@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EPF Calculator: Check PF Balance & Interest | CalcTools</title>
+  
+  <meta name="description" content="Calculate your Employee Provident Fund (EPF) corpus at retirement. Understand the 12% contribution rule, EPS pension split, and tax-free withdrawal limits.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6716301911368752"
+     crossorigin="anonymous"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">CalcTools</div>
+    <nav class="nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link">Calculators</a>
+      <a href="../../blog/index.html" class="nav-link">Learn</a>
+      <a href="../../about.html" class="nav-link">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 60px 20px;">
+  <div class="container">
+    <h1>EPF Calculator</h1>
+    <p>Track your biggest retirement asset. Calculate the power of 8.25% compounding.</p>
+  </div>
+</section>
+
+<section class="container" style="margin-top: -40px;">
+  <div class="calc-container">
+    
+    <div class="calc-body">
+      <div class="calc-inputs">
+        
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Basic Salary + DA</span>
+            <div class="input-val" id="display-salary">₹25,000</div>
+          </div>
+          <input type="range" id="salary-slider" min="10000" max="200000" step="1000" value="25000">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Current Age</span>
+            <div class="input-val" id="display-age">25 Yr</div>
+          </div>
+          <input type="range" id="age-slider" min="18" max="55" step="1" value="25">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">Annual Salary Hike (%)</span>
+            <div class="input-val" id="display-hike">5%</div>
+          </div>
+          <input type="range" id="hike-slider" min="0" max="20" step="1" value="5">
+        </div>
+
+        <div class="input-group">
+          <div class="input-top">
+            <span class="input-label">EPF Interest Rate</span>
+            <div class="input-val" id="display-rate">8.25%</div>
+          </div>
+          <input type="range" id="rate-slider" min="7" max="9" step="0.05" value="8.25">
+        </div>
+
+      </div>
+
+      <div class="result-section">
+        <div class="chart-wrapper">
+          <canvas id="epfChart"></canvas>
+        </div>
+
+        <div class="result-box" style="width: 100%;">
+          <div class="result-item">
+            <span>Employee Share</span>
+            <span id="res-employee">₹28,40,000</span>
+          </div>
+          <div class="result-item">
+            <span>Employer Share</span>
+            <span id="res-employer">₹8,65,000</span>
+          </div>
+          <div class="result-item">
+            <span>Total Interest</span>
+            <span id="res-interest" style="color:var(--accent-green);">₹85,12,000</span>
+          </div>
+          
+          <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
+            <span>Maturity (Age 58)</span>
+            <span id="res-total" style="font-size:1.4rem; color:var(--accent-blue); font-weight:700;">₹1.22 Cr</span>
+          </div>
+        </div>
+        
+        <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" class="hero-btn" style="width:100%; margin-top:20px; text-align:center; display:block; background:#1e293b; border:1px solid #38bdf8; color:#38bdf8;">
+          Check Passbook (EPFO Login) ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container page-with-sidebar">
+  
+  <main class="content-area">
+    <div class="content-wrapper" style="width: 100%;">
+      
+      <article class="article-block">
+        <h2>Understanding Employee Provident Fund (EPF)</h2>
+        <p>
+          EPF is a mandatory retirement savings scheme managed by the EPFO (Employees' Provident Fund Organization) for salaried employees in India. It is one of the most powerful wealth-building tools because of its high interest rate (currently 8.25%) and sovereign guarantee.
+        </p>
+
+        <h3>The 12% Contribution Rule</h3>
+        <p>
+          Every month, <strong>12% of your Basic Salary + DA</strong> is deducted as your contribution. Your employer matches this with another 12%. However, the employer's share is split:
+        </p>
+        <div class="highlight-box">
+          <strong>Where does the money go?</strong>
+          <ul style="margin: 10px 0 10px 20px; list-style:disc;">
+            <li><strong>Your Share (12%):</strong> Goes 100% into your EPF Account.</li>
+            <li><strong>Employer Share (3.67%):</strong> Goes into your EPF Account.</li>
+            <li><strong>Employer Share (8.33%):</strong> Diverted to <strong>EPS (Employee Pension Scheme)</strong>.</li>
+          </ul>
+          <em>Note: This calculator focuses on the EPF Corpus (Wealth). The EPS portion goes towards a monthly pension post-retirement.</em>
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>Tax Benefits (EEE Status)</h2>
+        <p>
+          EPF is highly tax-efficient, falling under the Exempt-Exempt-Exempt (EEE) category for most employees.
+        </p>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li><strong>Investment:</strong> Your contribution qualifies for Section 80C deduction (up to ₹1.5 Lakhs).</li>
+          <li><strong>Interest:</strong> Tax-free (if annual contribution is below ₹2.5 Lakhs).</li>
+          <li><strong>Maturity:</strong> Withdrawal after 5 years of continuous service is 100% Tax-Free.</li>
+        </ul>
+        <p>
+          <strong>Important Update (2021):</strong> If your own contribution exceeds ₹2.5 Lakhs in a financial year, the interest earned on the *excess* amount is taxable.
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>When Can You Withdraw EPF?</h2>
+        <p>
+          While the scheme aims for retirement at age 58, early withdrawals are allowed under specific conditions:
+        </p>
+        
+        <h3>1. Job Loss (Unemployment)</h3>
+        <p>
+          If you are unemployed for 1 month, you can withdraw 75% of the corpus. After 2 months of unemployment, you can withdraw the remaining 25%.
+        </p>
+
+        <h3>2. Partial Withdrawals (Advances)</h3>
+        <p>
+          You can take a non-refundable advance for:
+          <br>• <strong>Marriage/Education:</strong> After 7 years of service (up to 50% of share).
+          <br>• <strong>Home Purchase:</strong> After 5 years of service.
+          <br>• <strong>Medical Emergency:</strong> Anytime (no minimum service required).
+        </p>
+      </article>
+
+      <article class="article-block">
+        <h2>VPF: Increasing Your Contribution</h2>
+        <p>
+          Did you know you can contribute <em>more</em> than 12%? This is called <strong>Voluntary Provident Fund (VPF)</strong>.
+        </p>
+        <p>
+          VPF enjoys the same high interest rate (8.25%) and government safety. It is often considered better than PPF because there is no ₹1.5 Lakh investment limit in VPF (though the tax-free interest limit of ₹2.5 Lakhs applies).
+        </p>
+      </article>
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h4>Disclaimer</h4>
+          <p>
+            <strong>EPS Exclusion:</strong> This calculator estimates the EPF Corpus (Lump Sum). It does not calculate the EPS Monthly Pension, which is a separate calculation based on pensionable service.
+          </p>
+          <p>
+            <strong>Salary Cap:</strong> For private employees, the employer contribution is often capped at a wage ceiling of ₹15,000 (i.e., max ₹1,800/month). This calculator assumes contribution on actual basic salary, which depends on your company policy.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="tool-sidebar">
+    <div class="link-box">
+      <div class="link-box-title">Retirement Tools</div>
+      <ul class="link-list">
+        <li><a href="epf-calculator.html" class="active">EPF Calculator</a></li>
+        <li><a href="nps-calculator.html">NPS Calculator</a></li>
+        <li><a href="gratuity-calculator.html">Gratuity Calculator</a></li>
+        <li><a href="ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
+      </ul>
+    </div>
+    
+    <div class="link-box">
+      <div class="link-box-title">Popular Tools</div>
+      <ul class="link-list">
+        <li><a href="../mutual-fund/sip-calculator.html">SIP Calculator</a></li>
+        <li><a href="../bank-accounts/ppf-calculator.html">PPF Calculator</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:15px;">CalcTools</div>
+      <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Retirement</h4>
+      <a href="nps-calculator.html">NPS Calculator</a>
+      <a href="epf-calculator.html">EPF Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px; font-size:0.8rem; color:#6b7280;">
+    © <span id="year">2026</span> CalcTools. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/calculators/epf.js"></script>
+
+</body>
+</html>
