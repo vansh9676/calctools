@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>RD Calculator: Recurring Deposit Interest & Maturity Value | CalcTools</title>
+  <title>RD Calculator – Check Recurring Deposit Maturity & Interest (2026)</title>
   
-  <meta name="description" content="Calculate the maturity value of your Recurring Deposit (RD). Compare RD returns with SIPs and FDs. Understand TDS rules and penalty for missed installments.">
+  <meta name="description" content="Calculate RD Maturity Amount and Interest online. Compare RD rates of SBI, HDFC, and Post Office. Check tax implications and RD vs SIP returns.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="canonical" href="https://calctools.co.in/calculators/bank-accounts/rd-calculator.html">
   
   <link rel="stylesheet" href="../../css/style.css">
   
@@ -13,6 +15,79 @@
      crossorigin="anonymous"></script>
      
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is RD safe in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, RD is one of the safest investment options. Deposits in scheduled banks are insured up to ₹5 Lakhs by DICGC (RBI subsidiary)."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can I stop RD in between?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can close an RD prematurely. However, banks usually charge a penalty of 1% on the interest rate applicable for the period the deposit remained with the bank."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is RD interest taxable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Interest earned on RD is added to your total income and taxed as per your income tax slab. TDS (10%) is deducted if interest exceeds ₹40,000 (₹50,000 for seniors) in a year."
+      }
+    }]
+  }
+  </script>
+
+  <style>
+    /* Styling for the new tables to match your dark theme */
+    .content-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .content-table th, .content-table td {
+      border: 1px solid #334155;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    .content-table th {
+      background-color: #1e293b;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .content-table tr:hover {
+      background-color: #0f172a;
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .tag-pill {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid #334155;
+      transition: all 0.2s;
+    }
+    .tag-pill:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+  </style>
 </head>
 
 <body>
@@ -32,22 +107,26 @@
 <section class="hero" style="padding: 60px 20px;">
   <div class="container">
     <h1>Recurring Deposit (RD) Calculator</h1>
-    <p>Build wealth small by small. Calculate your RD maturity amount.</p>
+    <p>Calculate the maturity value of your monthly savings with precise interest compounding.</p>
   </div>
 </section>
 
 <section class="container" style="margin-top: -40px;">
   <div class="calc-container">
     
+    <div class="calc-header">
+      <div class="calc-tab active">RD Calculator</div>
+      <a href="../bank-accounts/fd-calculator.html" class="calc-tab" style="text-decoration:none; color:inherit;">FD Calculator</a>
+    </div>
+
     <div class="calc-body">
       <div class="calc-inputs">
-        
         <div class="input-group">
           <div class="input-top">
             <span class="input-label">Monthly Investment</span>
-            <div class="input-val" id="display-amt">₹5,000</div>
+            <div class="input-val" id="display-investment">₹5,000</div>
           </div>
-          <input type="range" id="amt-slider" min="500" max="100000" step="500" value="5000">
+          <input type="range" id="investment-slider" min="500" max="100000" step="500" value="5000">
         </div>
 
         <div class="input-group">
@@ -55,7 +134,7 @@
             <span class="input-label">Interest Rate (p.a)</span>
             <div class="input-val" id="display-rate">6.5%</div>
           </div>
-          <input type="range" id="rate-slider" min="3" max="10" step="0.1" value="6.5">
+          <input type="range" id="rate-slider" min="3" max="12" step="0.1" value="6.5">
         </div>
 
         <div class="input-group">
@@ -65,29 +144,30 @@
           </div>
           <input type="range" id="years-slider" min="1" max="10" step="1" value="5">
         </div>
-
       </div>
 
       <div class="result-section">
         <div class="chart-wrapper">
           <canvas id="rdChart"></canvas>
         </div>
+        
 
         <div class="result-box" style="width: 100%;">
           <div class="result-item">
-            <span>Invested Amount</span>
+            <span>Total Investment</span>
             <span id="res-invested">₹3,00,000</span>
           </div>
           <div class="result-item">
-            <span>Total Interest</span>
-            <span id="res-interest" style="color:var(--accent-green);">₹54,954</span>
+            <span>Interest Earned</span>
+            <span id="res-interest" style="color:var(--accent-green);">₹54,953</span>
           </div>
           <div class="result-item" style="border-top:1px solid var(--border-color); margin-top:10px; padding-top:10px;">
             <span>Maturity Value</span>
-            <span id="res-total" style="font-size:1.4rem; color:var(--accent-blue); font-weight:700;">₹3,54,954</span>
+            <span id="res-total" style="font-size:1.2rem; color:var(--accent-blue); font-weight:700;">₹3,54,953</span>
           </div>
         </div>
-        <button class="hero-btn" style="width:100%; margin-top:20px; text-align:center;"> <a href="https://www.icici.bank.in/personal-banking/deposits/recurring-deposits">Start an RD</a></button>
+        
+        <button class="hero-btn" style="width:100%; margin-top:20px;">Invest in RD Now (Coming Soon)</button>
       </div>
     </div>
   </div>
@@ -99,47 +179,117 @@
     <div class="content-wrapper" style="width: 100%;">
       
       <article class="article-block">
-        <h2>What is a Recurring Deposit (RD)?</h2>
+        <h2>Understanding Recurring Deposits (RD)</h2>
         <p>
-          A Recurring Deposit (RD) is a special kind of Term Deposit offered by banks in India. It helps people with regular incomes to deposit a fixed amount every month into their RD account and earn interest at the rate applicable to Fixed Deposits.
+          A Recurring Deposit (RD) is a special kind of Term Deposit offered by banks in India which helps people with regular incomes to deposit a fixed amount every month into their Recurring Deposit account and earn interest at the rate applicable to Fixed Deposits.
         </p>
         <p>
-          Think of it as an "FD in installments." Instead of investing a lump sum of ₹1 Lakh at once (which many people don't have), you invest ₹5,000 every month for 20 months.
+          It is similar to making a fixed deposit of a certain amount every month. For example, depositing ₹5,000 every month for 5 years.
         </p>
+      </article>
 
-        <h3>RD vs. SIP: The Ultimate Battle</h3>
-        <p>
-          Both RD and SIP involve investing a fixed amount monthly. But they are vastly different products.
-        </p>
-        <div style="overflow-x:auto; margin: 20px 0;">
-          <table style="width:100%; border-collapse: collapse; text-align: left; color: #d1d5db;">
+      <article class="article-block">
+        <h2>Why Choose Recurring Deposit? (Benefits)</h2>
+        <ul style="margin: 20px 0 20px 20px; list-style:disc; color:#d1d5db;">
+          <li style="margin-bottom:10px;"><strong>Disciplined Savings:</strong> Since you have to deposit a fixed amount every month, it forces a saving habit.</li>
+          <li style="margin-bottom:10px;"><strong>Guaranteed Returns:</strong> Unlike Mutual Funds, RD returns are fixed at the time of opening the account. No market risk.</li>
+          <li style="margin-bottom:10px;"><strong>Small Ticket Size:</strong> You can start an RD with as little as ₹500/month.</li>
+          <li><strong>Liquidity:</strong> You can break the RD prematurely (with a small penalty) or take a loan against it (up to 90% of value).</li>
+        </ul>
+      </article>
+
+      <article class="article-block">
+        <h2>Latest RD Interest Rates (2026 Estimates)</h2>
+        <p>RD rates generally track FD rates. Here is an approximate comparison for general citizens (Seniors usually get 0.50% extra).</p>
+        <div style="overflow-x:auto;">
+          <table class="content-table">
             <thead>
-              <tr style="border-bottom: 2px solid var(--border-color);">
-                <th style="padding: 15px;">Feature</th>
-                <th style="padding: 15px;">Recurring Deposit (RD)</th>
-                <th style="padding: 15px;">SIP (Mutual Funds)</th>
+              <tr>
+                <th>Bank / Institution</th>
+                <th>1 Year Rate</th>
+                <th>3 Year Rate</th>
+                <th>5 Year Rate</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom: 1px solid var(--border-color);">
-                <td style="padding: 15px;"><strong>Safety</strong></td>
-                <td style="padding: 15px; color:var(--accent-green);">Guaranteed (Bank)</td>
-                <td style="padding: 15px; color:#f87171;">Market Linked (Volatile)</td>
+              <tr>
+                <td><strong>SBI</strong></td>
+                <td>6.80%</td>
+                <td>6.50%</td>
+                <td>6.50%</td>
               </tr>
-              <tr style="border-bottom: 1px solid var(--border-color);">
-                <td style="padding: 15px;"><strong>Returns</strong></td>
-                <td style="padding: 15px;">6% - 7.5%</td>
-                <td style="padding: 15px;">12% - 15% (Long term)</td>
+              <tr>
+                <td><strong>HDFC Bank</strong></td>
+                <td>7.10%</td>
+                <td>7.00%</td>
+                <td>7.00%</td>
               </tr>
-              <tr style="border-bottom: 1px solid var(--border-color);">
-                <td style="padding: 15px;"><strong>Taxation</strong></td>
-                <td style="padding: 15px;">Interest Fully Taxable</td>
-                <td style="padding: 15px;">LTCG 12.5% (Equity)</td>
+              <tr>
+                <td><strong>ICICI Bank</strong></td>
+                <td>7.10%</td>
+                <td>7.00%</td>
+                <td>6.90%</td>
               </tr>
-              <tr style="border-bottom: 1px solid var(--border-color);">
-                <td style="padding: 15px;"><strong>Penalty</strong></td>
-                <td style="padding: 15px;">Yes, for missed payments</td>
-                <td style="padding: 15px;">None (You can pause)</td>
+              <tr>
+                <td><strong>Post Office</strong></td>
+                <td>6.70%</td>
+                <td>6.70%</td>
+                <td>6.70%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.85rem; color:#9ca3af;">*Rates are subject to change. Please check with the respective bank before investing.</p>
+      </article>
+
+      <article class="article-block">
+        <h2>How is RD Interest Calculated?</h2>
+        <p>
+          The formula used for Recurring Deposit is the same as compound interest. However, since the money is deposited every month, the interest is calculated on each installment for the period it remains with the bank.
+        </p>
+        <div class="highlight-box">
+          <strong>Formula:</strong><br>
+          M = P × n + I<br>
+          Where,<br>
+          M = Maturity Value<br>
+          P = Monthly Installment<br>
+          n = Number of quarters (compounded quarterly)<br>
+          I = Interest Earned
+        </div>
+      </article>
+
+      <article class="article-block">
+        <h2>RD vs Mutual Fund SIP: Which is Better?</h2>
+        <p>Should you put your ₹5,000 in an RD or a SIP? Here is the comparison:</p>
+        <div style="overflow-x:auto;">
+          <table class="content-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Recurring Deposit (RD)</th>
+                <th>Mutual Fund (SIP)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Safety</strong></td>
+                <td style="color:#22c55e;">High (Bank Guarantee)</td>
+                <td style="color:#f87171;">Moderate (Market Risk)</td>
+              </tr>
+              <tr>
+                <td><strong>Returns</strong></td>
+                <td>Fixed (6% - 7.5%)</td>
+                <td style="color:#22c55e;">Variable (10% - 15%)</td>
+              </tr>
+              <tr>
+                <td><strong>Taxation</strong></td>
+                <td>Taxed as Income (Slab Rate)</td>
+                <td style="color:#22c55e;">LTCG @ 12.5% (Efficient)</td>
+              </tr>
+              <tr>
+                <td><strong>Best For</strong></td>
+                <td>Short term goals (< 3 Yrs)</td>
+                <td>Long term wealth (> 5 Yrs)</td>
               </tr>
             </tbody>
           </table>
@@ -147,33 +297,40 @@
       </article>
 
       <article class="article-block">
-        <h2>How Banks Calculate RD Interest</h2>
+        <h2>Taxation on RD</h2>
         <p>
-          The formula for RD calculation is surprisingly complex. Banks use the <strong>Quarterly Compounding</strong> formula on each monthly installment.
+          The interest earned on Recurring Deposits is fully taxable. It is added to your annual income and taxed according to your Income Tax Slab.
         </p>
         <p>
-          This means your 1st installment earns interest for 12 months, your 2nd installment earns for 11 months, and so on. Since the tenure for each installment is different, the compounding effect varies for each ₹5,000 you deposit.
+          <strong>TDS on RD:</strong> If the interest income from FD and RD combined exceeds ₹40,000 (₹50,000 for Senior Citizens) in a financial year, the bank deducts TDS at 10%. If you do not provide PAN, TDS is 20%.
         </p>
       </article>
 
       <article class="article-block">
-        <h2>Rules You Must Know</h2>
-        
-        <h3>1. Penalty for Missed Payments</h3>
-        <p>
-          Unlike SIPs where you can skip a month without penalty, banks charge a fine if you miss an RD installment. Usually, it is <strong>₹1.50 for every ₹100</strong> per month of delay. If you miss 4 consecutive installments, the bank may close your RD account prematurely.
-        </p>
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 1.1rem; color: #e5e7eb;">Q1. Is RD safe?</h3>
+          <p>Yes, RDs in scheduled banks are very safe. The DICGC covers deposits up to ₹5 Lakhs per bank.</p>
+          
+          <h3 style="font-size: 1.1rem; color: #e5e7eb; margin-top:15px;">Q2. What happens if I miss an RD installment?</h3>
+          <p>Banks typically charge a penalty (around ₹1.5 per ₹100) for missed payments. If you miss multiple payments, the bank may close the account.</p>
+          
+          <h3 style="font-size: 1.1rem; color: #e5e7eb; margin-top:15px;">Q3. Can I deposit variable amounts in RD?</h3>
+          <p>In a standard RD, the amount is fixed. However, banks offer "Flexi RD" schemes (like SBI Flexi Deposit) where you can deposit varying amounts each month.</p>
+          
+          <h3 style="font-size: 1.1rem; color: #e5e7eb; margin-top:15px;">Q4. What is the minimum RD period?</h3>
+          <p>The minimum tenure for an RD is usually 6 months, and the maximum is 10 years.</p>
+        </div>
+      </article>
 
-        <h3>2. TDS on RD Interest</h3>
-        <p>
-          Earlier, TDS was not applicable on RDs. However, since 2015, RD interest is taxable just like FD interest.
-          <br>If your total interest income exceeds ₹40,000/year, the bank will deduct <strong>10% TDS</strong>. Submit Form 15G/15H to avoid this if your total income is below the taxable limit.
-        </p>
-
-        <h3>3. Premature Closure</h3>
-        <p>
-          You can close your RD before the tenure ends, but banks deduct a <strong>1% penalty</strong> from the interest rate applicable for the period the deposit remained with the bank.
-        </p>
+      <article class="article-block">
+        <h3>Related Searches</h3>
+        <div class="tag-cloud">
+          <a href="fd-calculator.html" class="tag-pill">FD Calculator</a>
+          <a href="../mutual-fund/sip-calculator.html" class="tag-pill">SIP vs RD</a>
+          <a href="../taxes/income-tax-calculator.html" class="tag-pill">Tax on RD Interest</a>
+          <a href="ppf-calculator.html" class="tag-pill">Post Office Schemes</a>
+        </div>
       </article>
 
       <div class="disclaimer-box">
@@ -181,10 +338,7 @@
         <div class="disclaimer-content">
           <h4>Disclaimer</h4>
           <p>
-            <strong>Accuracy:</strong> This calculator uses the standard quarterly compounding method used by Indian banks. However, some small finance banks or post offices may use simple interest for short tenures.
-          </p>
-          <p>
-            <strong>Rates:</strong> Interest rates mentioned are indicative. Senior citizens usually get 0.50% extra.
+            The results are estimates based on monthly compounding logic. Actual bank calculations may vary slightly due to quarterly compounding or penalty clauses.
           </p>
         </div>
       </div>
@@ -193,36 +347,24 @@
   </main>
 
   <aside class="tool-sidebar">
-    
     <div class="link-box">
-      <div class="link-box-title">Mutual Fund Tools</div>
+      <div class="link-box-title">Savings Calculators</div>
+      <ul class="link-list">
+        <li><a href="fd-calculator.html">FD Calculator</a></li>
+        <li><a href="rd-calculator.html" class="active">RD Calculator</a></li>
+        <li><a href="ppf-calculator.html">PPF Calculator</a></li>
+        <li><a href="../retirement/ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
+      </ul>
+    </div>
+
+    <div class="link-box">
+      <div class="link-box-title">Investment Tools</div>
       <ul class="link-list">
         <li><a href="../mutual-fund/sip-calculator.html">SIP Calculator</a></li>
         <li><a href="../mutual-fund/lumpsum-calculator.html">Lumpsum Calculator</a></li>
         <li><a href="../mutual-fund/swp-calculator.html">SWP Calculator</a></li>
       </ul>
     </div>
-
-    <div class="link-box">
-      <div class="link-box-title">Banking & Post Office</div>
-      <ul class="link-list">
-        <li><a href="fd-calculator.html">FD Calculator</a></li>
-        <li><a href="rd-calculator.html" class="active">RD Calculator</a></li> <li><a href="ppf-calculator.html">PPF Calculator</a></li>
-        <li><a href="../retirement/ssy-calculator.html">Sukanya Samriddhi (SSY)</a></li>
-      </ul>
-    </div>
-
-    <div class="link-box">
-      <div class="link-box-title">Loans & Tax</div>
-      <ul class="link-list">
-        <li><a href="../loans/home-loan-calculator.html">Home Loan EMI</a></li>
-        <li><a href="../taxes/gst-calculator.html">GST Calculator</a></li>
-        <li><a href="../taxes/income-tax-calculator.html">Income Tax Calculator</a></li>
-      </ul>
-    </div>
-
-  
-
   </aside>
 
 </section>
@@ -234,9 +376,9 @@
       <p style="font-size:0.9rem;">India's trusted financial planning hub.</p>
     </div>
     <div class="footer-col">
-      <h4>Tools</h4>
+      <h4>Popular</h4>
       <a href="fd-calculator.html">FD Calculator</a>
-      <a href="rd-calculator.html">RD Calculator</a>
+      <a href="../mutual-fund/sip-calculator.html">SIP Calculator</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
