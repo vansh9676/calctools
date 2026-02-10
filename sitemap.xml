@@ -1,192 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
   <url>
     <loc>https://calctools.co.in/</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>1.0</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>1.00</priority>
   </url>
-
-  <!-- Trust Pages -->
   <url>
     <loc>https://calctools.co.in/about.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.4</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/contact.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.4</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/privacy-policy.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.3</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/terms.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.3</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.50</priority>
   </url>
 
-  <!-- Calculators Index -->
   <url>
     <loc>https://calctools.co.in/calculators/index.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://calctools.co.in/blogs/index.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.90</priority>
   </url>
 
-  <!-- Mutual Fund Calculators -->
   <url>
     <loc>https://calctools.co.in/calculators/mutual-fund/sip-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/mutual-fund/lumpsum-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/mutual-fund/swp-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://calctools.co.in/calculators/mutual-fund/step-up-sip-calculator.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
 
-  <!-- Loan Calculators -->
   <url>
     <loc>https://calctools.co.in/calculators/loans/home-loan-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/loans/car-loan-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/loans/personal-loan-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/loans/emi-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
 
-  <!-- Tax Calculators -->
   <url>
-    <loc>https://calctools.co.in/calculators/taxes/income-tax-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.9</priority>
+    <loc>https://calctools.co.in/calculators/bank-accounts/ppf-calculator.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://calctools.co.in/calculators/taxes/gst-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calctools.co.in/calculators/taxes/hra-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Bank & Retirement -->
   <url>
     <loc>https://calctools.co.in/calculators/bank-accounts/fd-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/bank-accounts/rd-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://calctools.co.in/calculators/bank-accounts/ppf-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.9</priority>
+    <loc>https://calctools.co.in/calculators/bank-accounts/ssy-calculator.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calctools.co.in/calculators/retirement/nps-calculator.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/retirement/epf-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calctools.co.in/calculators/retirement/nps-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/calculators/retirement/gratuity-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calctools.co.in/calculators/retirement/ssy-calculator.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
 
-  <!-- Blogs -->
   <url>
-    <loc>https://calctools.co.in/blogs/index.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.7</priority>
+    <loc>https://calctools.co.in/calculators/taxes/income-tax-calculator.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://calctools.co.in/calculators/taxes/gst-calculator.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://calctools.co.in/calculators/taxes/hra-calculator.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
 
+  <url>
+    <loc>https://calctools.co.in/blogs/investing/the-50-30-20-rule.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://calctools.co.in/blogs/investing/sip-vs-lumpsum.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/blogs/investing/power-of-compounding.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://calctools.co.in/blogs/investing/mutual-funds-beginners-guide.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  
+  <url>
+    <loc>https://calctools.co.in/blogs/loans/home-loan-prepayment-guide.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
-      <loc>https://calctools.co.in/blogs/investing/the-50-30-20-rule</loc>
-      <lastmod>2026-01-28</lastmod>
-      <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://calctools.co.in/blogs/taxes/old-vs-new-regime.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://calctools.co.in/blogs/taxes/section-80c-guide.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://calctools.co.in/blogs/taxes/how-to-save-tax.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
+    <loc>https://calctools.co.in/blogs/loans/cibil-score-guide.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://calctools.co.in/blogs/loans/home-loan-prepayment-guide.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
+    <loc>https://calctools.co.in/blogs/taxes/old-vs-new-regime.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://calctools.co.in/blogs/loans/choosing-loan-tenure.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
+    <loc>https://calctools.co.in/blogs/taxes/section-80c-guide.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://calctools.co.in/blogs/loans/credit-score-guide.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <priority>0.6</priority>
+    <loc>https://calctools.co.in/blogs/taxes/how-to-save-tax.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
   </url>
 
 </urlset>
