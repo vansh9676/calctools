@@ -1,9 +1,20 @@
 /* ==================================================================
    MULTI-COUNTRY INCOME TAX CALCULATOR
-   Supports: India (FY25-26), USA (2024), UK (2024-25)
    ================================================================== */
 
+function updateSliderFill(slider) {
+    const min = slider.min ? slider.min : 0;
+    const max = slider.max ? slider.max : 100;
+    const value = slider.value;
+
+    const percent = ((value - min) / (max - min)) * 100;
+
+    slider.style.background =
+        `linear-gradient(to right, #38bdf8 ${percent}%, #334155 ${percent}%)`;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+
     
     // --- Elements ---
     const countrySelect = document.getElementById("country-select");
@@ -322,15 +333,18 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
-
-    // --- Events ---
+     // --- 3. Event Listeners for Sliders ---
     [incomeSlider, cSlider, dSlider, hraSlider].forEach(slider => {
-        slider.addEventListener("input", function() {
-            updateSliderFill(this);
-            calculate();
-        });
-        updateSliderFill(slider);
+    if (!slider) return;
+
+    slider.addEventListener("input", function () {
+        updateSliderFill(this);
+        calculate();
     });
+
+    updateSliderFill(slider);
+});
+
 
     calculate(); // Init
 });
