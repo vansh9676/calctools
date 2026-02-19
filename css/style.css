@@ -607,3 +607,44 @@ input[type=range]::-webkit-slider-thumb:hover {
     order: 2; /* Puts links BELOW content on mobile (Optional: change to -1 for top) */
   }
 }
+* Styling for the new tables to match your dark theme */
+    .content-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .content-table th, .content-table td {
+      border: 1px solid #334155;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    .content-table th {
+      background-color: #1e293b;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .content-table tr:hover {
+      background-color: #0f172a;
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .tag-pill {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid #334155;
+      transition: all 0.2s;
+    }
+    .tag-pill:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
